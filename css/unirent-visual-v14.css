@@ -1,0 +1,190 @@
+/* UniRent v14 — Final micro-polish / QA layer
+   Focus: mobile spacing, contrast, tap targets, nav behavior, final UI consistency.
+*/
+:root{
+  --ur14-blue:#1834a8;
+  --ur14-blue-2:#315cff;
+  --ur14-cyan:#74d8ff;
+  --ur14-ink:#050918;
+  --ur14-text:#11131f;
+  --ur14-muted:#687184;
+  --ur14-line:rgba(8,13,35,.10);
+  --ur14-soft:#f6f8fd;
+  --ur14-shadow:0 18px 54px rgba(8,13,35,.10);
+  --ur14-focus:0 0 0 4px rgba(116,216,255,.30),0 0 0 1px rgba(255,255,255,.80);
+}
+html{min-width:320px;background:var(--ur14-ink);}
+body{min-width:320px;overscroll-behavior-x:none;}
+::selection{background:rgba(116,216,255,.32);color:#061022;}
+img{max-width:100%;}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent;}
+input,select,textarea{font-size:16px;}
+textarea{resize:vertical;min-height:128px;}
+
+/* Safer focus ring across dark and light sections */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:0!important;
+  box-shadow:var(--ur14-focus)!important;
+}
+main a:focus-visible,.page-content a:focus-visible,.content a:focus-visible{
+  box-shadow:0 0 0 4px rgba(24,52,168,.15)!important;
+}
+
+/* Navigation final QA */
+.nav{isolation:isolate;}
+.logo{white-space:nowrap;}
+.navlinks{min-width:0;}
+.navlinks a{white-space:nowrap;}
+.menu[aria-expanded="true"]{
+  background:#fff!important;
+  color:var(--ur14-blue)!important;
+  border-color:#fff!important;
+}
+@media(max-width:1000px){
+  .navlinks{
+    max-height:min(560px,calc(100vh - 108px))!important;
+    overflow:auto!important;
+    overscroll-behavior:contain!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  .navlinks a{
+    min-height:46px!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+}
+
+/* Unified CTA micro interactions */
+.btn,.card-btn,.more,.reserve-hero,.cta-primary,.cta-secondary,
+.home-v13-primary,.home-v13-secondary,.vehicle-primary,.vehicle-secondary,
+.price-reserve-link,.v12-panel-link,.blog-more,.contact-form button,.v12-form button,
+.summary-action-v10,.top-reserve-v10,.floating-reserve{
+  min-height:44px;
+  transform:translateZ(0);
+}
+.btn:hover,.card-btn:hover,.more:hover,.reserve-hero:hover,.cta-primary:hover,
+.home-v13-primary:hover,.vehicle-primary:hover,.price-reserve-link:hover,.v12-panel-link:hover,
+.blog-more:hover,.contact-form button:hover,.v12-form button:hover,.summary-action-v10:hover{
+  filter:saturate(1.04);
+}
+.btn:active,.card-btn:active,.more:active,.reserve-hero:active,.cta-primary:active,
+.home-v13-primary:active,.vehicle-primary:active,.price-reserve-link:active,.v12-panel-link:active,
+.blog-more:active,.contact-form button:active,.v12-form button:active,.summary-action-v10:active{
+  transform:translateY(0) scale(.985)!important;
+}
+
+/* Form/readability final pass */
+.field input,.field select,.fake-input input,.fake-input select,
+.contact-form input,.contact-form select,.contact-form textarea,
+.v12-form input,.v12-form select,.v12-form textarea,
+.booking-contact-form-v10 input,.booking-contact-form-v10 select,.booking-contact-form-v10 textarea{
+  caret-color:var(--ur14-blue);
+}
+.field input::placeholder,.fake-input input::placeholder,
+.contact-form input::placeholder,.contact-form textarea::placeholder,
+.v12-form input::placeholder,.v12-form textarea::placeholder,
+.booking-contact-form-v10 input::placeholder,.booking-contact-form-v10 textarea::placeholder{
+  opacity:.72;
+}
+select{background-position:calc(100% - 18px) 50%;text-overflow:ellipsis;}
+.form-note,.v12-note,#bookingStatus,#contactStatus{line-height:1.45;}
+
+/* Vehicle cards: make visual rhythm more consistent after all passes */
+.vehicle-card-v8,.car-card,.card{
+  will-change:transform;
+}
+.vehicle-card-v8 .vehicle-actions,.car-card .vehicle-actions,.card .vehicle-actions{
+  align-items:stretch;
+}
+.vehicle-secondary{
+  text-align:center;
+}
+.vehicle-card-v8.is-selected{
+  outline:2px solid rgba(116,216,255,.85);
+  outline-offset:3px;
+}
+.car-img-zone img,.fleet-image img,.image-slot img{
+  user-select:none;
+}
+
+/* Cenovnik QA: stable sticky layers and less cramped mobile rows */
+.pricing-table th:nth-child(1),.pricing-table td:nth-child(1),
+.pricing-table th:nth-child(2),.pricing-table td:nth-child(2),
+.pricing-table th:last-child,.pricing-table td:last-child{
+  background-clip:padding-box;
+}
+.pricing-table tbody tr.is-filtered-out{display:none!important;}
+.result-status{min-height:1.25em;}
+@media(max-width:760px){
+  .pricing-table tbody td:nth-child(2){line-height:1.16!important;}
+  .pricing-table tbody td:nth-child(n+3):not(:last-child){font-size:15px!important;}
+  .price-reserve-link{width:100%;}
+}
+
+/* Blog/contact final responsive polish */
+.blog-v12 .article-card,.blog-v12 .featured-article-v12,.contact-v12 .v12-form-card,.contact-v12 .v12-contact-card{
+  backface-visibility:hidden;
+}
+.blog-filters-v12 button.is-active{
+  box-shadow:0 10px 26px rgba(24,52,168,.18);
+}
+.contact-process-v12,.home-process-grid-v13,.trust-grid,.price-overview,.quick-grid-v10,.conditions-grid-v11,.contact-quick-v12{
+  align-items:stretch;
+}
+
+/* Floating CTA final placement */
+.floating-reserve{
+  bottom:calc(18px + env(safe-area-inset-bottom,0px))!important;
+  z-index:80!important;
+}
+@media(max-width:760px){
+  body{padding-bottom:env(safe-area-inset-bottom,0px);}
+  .floating-reserve.is-visible{
+    left:16px!important;
+    right:16px!important;
+    bottom:calc(14px + env(safe-area-inset-bottom,0px))!important;
+    min-height:52px!important;
+    border-radius:18px!important;
+  }
+}
+
+/* Homepage final balancing */
+.home-v13 .home-v13-copy h2{text-wrap:balance;}
+.home-v13 .home-v13-copy p,.title h2,.v12-hero-copy h1,.booking-hero-copy-v10 h1{text-wrap:balance;}
+.home-v13 .home-v13-stats span,.trust-item span,.home-step-v13 p{text-wrap:pretty;}
+.home-v13 .home-v13-booking-foot span{min-width:0;}
+@media(max-width:1100px){
+  .home-v13 .home-v13-shell{padding-bottom:8px;}
+  .home-v13 .booking{width:100%!important;}
+}
+@media(max-width:760px){
+  .home-v13 .home-v13-copy{padding-top:6px!important;}
+  .home-v13 .home-v13-kicker{margin-bottom:4px;}
+  .home-v13 .home-v13-copy h2{letter-spacing:-.065em!important;}
+  .home-v13 .home-v13-stats{gap:10px!important;}
+  .home-v13 .home-v13-stat{min-height:82px!important;padding:15px!important;border-radius:20px!important;}
+  .home-v13 .home-v13-route-card{padding:18px!important;border-radius:22px!important;}
+  .home-process-v13{padding-top:42px!important;}
+}
+
+/* Inner-page mobile spacing tune-up */
+@media(max-width:640px){
+  .container{width:min(100% - 28px,1180px)!important;}
+  .page-hero-lite,.blog-v12 .page-hero-lite,.contact-v12 .page-hero-lite{padding-top:96px!important;padding-bottom:58px!important;}
+  .v12-hero-grid,.booking-hero-grid-v10,.blog-layout-v12,.contact-main-v12{grid-template-columns:1fr!important;}
+  .v12-hero-copy h1,.booking-hero-copy-v10 h1{font-size:clamp(40px,12vw,56px)!important;}
+  .v12-hero-metrics,.booking-steps-v10{grid-template-columns:1fr!important;}
+  .quick-grid-v10,.contact-quick-v12,.conditions-grid-v11,.mileage-grid-v11,.faq-grid{grid-template-columns:1fr!important;}
+  .filters,.toolbar,.filter-left,.tools{width:100%;}
+  .filters > *, .toolbar > *, .filter-left > *, .tools > *{max-width:100%;}
+  .filter,.filter-select,.pill-select,.pill-select select,.select,.search{width:100%!important;}
+  .footer{padding-bottom:72px!important;}
+}
+
+/* Reduce expensive effects on small/mobile devices without changing style */
+@media(max-width:760px), (prefers-reduced-motion:reduce){
+  .hero-image,.feature-image,.hero-car,.hero-car-slot,.image-slot img{animation:none!important;}
+  .car-card:hover,.card:hover,.vehicle-card-v8:hover,.blog-card:hover,.article-card:hover,.info-card:hover{
+    transform:none!important;
+  }
+}

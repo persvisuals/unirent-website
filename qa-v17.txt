@@ -1,0 +1,1 @@
+v17 fixes: compacted/aligned fleet filter toolbar; restyled reservation form into clean card system; removed heavy pricing-table sticky shadows and clipped group chip; added robust responsive Blog/Kontakt CSS overrides.

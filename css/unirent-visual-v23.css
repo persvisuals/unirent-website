@@ -1,0 +1,146 @@
+
+/* UniRent v23 — requested visual cleanup: branded price, cleaner cards, flatter reservation fields, no hero car box */
+
+/* 1) Vehicle card price block: make it feel like part of UniRent brand, not a separate white slab. */
+.vehicle-card-v8 .price{
+  display:flex!important;
+  align-items:baseline!important;
+  justify-content:center!important;
+  gap:10px!important;
+  min-height:78px!important;
+  margin:0 24px!important;
+  padding:18px 18px!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(123,220,255,.20),transparent 48%),
+    linear-gradient(180deg,rgba(49,92,255,.42),rgba(5,12,42,.74))!important;
+  border:1px solid rgba(123,220,255,.26)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 18px 38px rgba(2,8,30,.22)!important;
+  color:#fff!important;
+  font-size:34px!important;
+  line-height:1!important;
+  font-weight:950!important;
+  letter-spacing:-1.1px!important;
+  text-align:center!important;
+}
+.vehicle-card-v8 .price::before{
+  content:'od'!important;
+  display:inline-flex!important;
+  margin:0!important;
+  color:rgba(210,236,255,.78)!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+.vehicle-card-v8 .price::after{
+  content:'/ dan'!important;
+  display:inline-flex!important;
+  margin:0!important;
+  color:rgba(210,236,255,.78)!important;
+  background:none!important;
+  font-size:16px!important;
+  font-weight:900!important;
+  letter-spacing:-.02em!important;
+  position:static!important;
+  width:auto!important;
+  height:auto!important;
+  transform:none!important;
+}
+.vehicle-card-v8 .price + small,
+.vehicle-card-v8 .price + .date,
+.vehicle-card-v8 .price span{
+  color:rgba(210,236,255,.70)!important;
+}
+
+/* 2) Card background cleanup: keep only the gradient, remove watermark text and decorative diagonal lines. */
+.vehicle-card-v8::before,
+.vehicle-card-v8::after,
+.vehicle-card-v8 .car-pic::before,
+.vehicle-card-v8 .car-img-zone::before{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+}
+.car-card.vehicle-card-v8,
+.card.vehicle-card-v8{
+  background:
+    radial-gradient(circle at 78% 12%,rgba(120,154,255,.28),transparent 28%),
+    radial-gradient(circle at 14% 84%,rgba(123,220,255,.10),transparent 30%),
+    linear-gradient(152deg,#1d45d3 0%,#0e1f68 44%,#040814 100%)!important;
+}
+.vehicle-card-v8 .car-pic,
+.vehicle-card-v8 .car-img-zone{
+  background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.055))!important;
+  border-color:rgba(255,255,255,.12)!important;
+}
+
+/* 3) Reservation fields: remove the heavy outline around each date/location/time input. */
+body.reservation-v10 #reservationDetails .fake-input,
+body.reservation-v10 #reservationDetails .reservation-box .fake-input,
+body.reservation-v10 .reservation-box .fake-input{
+  border:0!important;
+  outline:0!important;
+  background:#f5f7fc!important;
+  box-shadow:inset 0 0 0 1px rgba(24,52,168,.08),0 8px 22px rgba(8,16,36,.045)!important;
+}
+body.reservation-v10 #reservationDetails .fake-input:hover,
+body.reservation-v10 #reservationDetails .fake-input:focus-within,
+body.reservation-v10 .reservation-box .fake-input:hover,
+body.reservation-v10 .reservation-box .fake-input:focus-within{
+  border:0!important;
+  background:#fff!important;
+  box-shadow:inset 0 0 0 1px rgba(24,52,168,.18),0 10px 26px rgba(8,16,36,.06)!important;
+}
+body.reservation-v10 #reservationDetails .fake-input input,
+body.reservation-v10 #reservationDetails .fake-input select,
+body.reservation-v10 .reservation-box .fake-input input,
+body.reservation-v10 .reservation-box .fake-input select{
+  color:#070b1c!important;
+  -webkit-text-fill-color:#070b1c!important;
+}
+body.reservation-v10 #reservationDetails .fake-input svg,
+body.reservation-v10 .reservation-box .fake-input svg{
+  color:#1834a8!important;
+  stroke:#1834a8!important;
+}
+
+/* 4) Blog/Kontakt hero car: remove the box and scale the car like other hero images. */
+.blog-v12 .v12-hero-panel.car-panel-v22,
+.contact-v12 .v12-hero-panel.car-panel-v22{
+  min-height:330px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  overflow:visible!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+}
+.blog-v12 .v12-hero-panel.car-panel-v22::before,
+.blog-v12 .v12-hero-panel.car-panel-v22::after,
+.contact-v12 .v12-hero-panel.car-panel-v22::before,
+.contact-v12 .v12-hero-panel.car-panel-v22::after{
+  content:none!important;
+  display:none!important;
+}
+.blog-v12 .v12-hero-panel.car-panel-v22 img,
+.contact-v12 .v12-hero-panel.car-panel-v22 img{
+  width:min(780px,150%)!important;
+  max-width:none!important;
+  height:auto!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  transform:translateY(18px)!important;
+  filter:drop-shadow(0 38px 32px rgba(0,0,0,.34))!important;
+}
+
+@media(max-width:760px){
+  .vehicle-card-v8 .price{min-height:72px!important;font-size:31px!important;}
+  .blog-v12 .v12-hero-panel.car-panel-v22,
+  .contact-v12 .v12-hero-panel.car-panel-v22{min-height:240px!important;}
+  .blog-v12 .v12-hero-panel.car-panel-v22 img,
+  .contact-v12 .v12-hero-panel.car-panel-v22 img{width:118%!important;transform:translateY(8px)!important;}
+}

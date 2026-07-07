@@ -1,0 +1,1 @@
+v26: Fixed rezervacija-podaci.html CSS connection by adding css/pages/rezervacija-podaci.css loaded last, adding missing shared visual CSS layers, and strengthening responsive layout rules for desktop/tablet/mobile.

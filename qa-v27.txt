@@ -1,0 +1,1 @@
+v27: Fixed rezervacija-podaci hero/header: logo override, nav row alignment, readable hero headline/copy, balanced selected-car card, responsive mobile menu.

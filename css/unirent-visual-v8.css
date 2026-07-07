@@ -1,0 +1,340 @@
+/* UniRent v8 — Step 2 visual pass
+   Focus: vehicle card + fleet section redesign across homepage, fleet and reservation. */
+:root{
+  --v8-blue:#1738c9;
+  --v8-blue-2:#4d73ff;
+  --v8-cyan:#7bdcff;
+  --v8-deep:#050817;
+  --v8-ink:#081024;
+  --v8-muted:#778094;
+  --v8-card-line:rgba(255,255,255,.16);
+  --v8-soft-line:rgba(8,16,36,.10);
+  --v8-shadow:0 28px 80px rgba(5,10,28,.22);
+}
+
+/* Fleet section becomes a product-browsing surface */
+.fleet,.fleet-section{
+  position:relative;
+  background:
+    radial-gradient(circle at 12% 5%,rgba(49,92,255,.09),transparent 26rem),
+    radial-gradient(circle at 88% 30%,rgba(123,220,255,.09),transparent 28rem),
+    linear-gradient(180deg,#f8faff 0%,#eef3fb 100%)!important;
+  overflow:hidden;
+}
+.fleet::before,.fleet-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,transparent 0 58%,rgba(23,56,201,.035) 58.15% 58.45%,transparent 58.6%),
+    linear-gradient(118deg,transparent 0 67%,rgba(23,56,201,.025) 67.1% 67.35%,transparent 67.5%);
+}
+.fleet>.container,.fleet-section>.container{position:relative;z-index:1}
+.fleet .title,.fleet-section .title,.fleet-section .section-head{
+  max-width:800px!important;
+  margin-inline:auto!important;
+}
+.fleet .title h2,.fleet-section .title h2,.fleet-section .section-head h2{
+  font-size:clamp(32px,4vw,50px)!important;
+  letter-spacing:-1.45px!important;
+}
+.filters,.toolbar{
+  position:relative;
+  border:1px solid rgba(8,16,36,.08)!important;
+  border-radius:26px!important;
+  padding:14px!important;
+  background:rgba(255,255,255,.78)!important;
+  backdrop-filter:blur(18px);
+  box-shadow:0 16px 50px rgba(8,16,36,.08)!important;
+}
+.filters::before,.toolbar::before{
+  content:'Filteri vozila';
+  position:absolute;
+  left:20px;
+  top:-12px;
+  height:24px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 10px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(180deg,var(--v8-blue-2),var(--v8-blue));
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  box-shadow:0 10px 28px rgba(23,56,201,.22);
+}
+.filter-select,.filter,.pill-select select{
+  min-width:148px!important;
+  height:48px!important;
+  font-weight:850!important;
+}
+.switch,.toggle{
+  min-width:142px!important;
+  justify-content:space-between!important;
+}
+
+/* New vehicle-card system */
+.car-card.vehicle-card-v8,.card.vehicle-card-v8{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:458px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:34px!important;
+  background:
+    radial-gradient(circle at 76% 18%,rgba(125,160,255,.38),transparent 26%),
+    radial-gradient(circle at 18% 96%,rgba(123,220,255,.14),transparent 28%),
+    linear-gradient(152deg,#1d45d3 0%,#0e1f68 43%,#040814 100%)!important;
+  box-shadow:var(--v8-shadow)!important;
+  border:1px solid var(--v8-card-line)!important;
+  transform:translateZ(0);
+}
+.car-card.vehicle-card-v8:hover,.card.vehicle-card-v8:hover{
+  transform:translateY(-8px)!important;
+  box-shadow:0 34px 90px rgba(23,56,201,.28),0 18px 40px rgba(5,10,28,.22)!important;
+}
+.vehicle-card-v8::before{
+  content:''!important;
+  position:absolute;
+  inset:0!important;
+  z-index:0!important;
+  background:
+    linear-gradient(118deg,transparent 0 56%,rgba(255,255,255,.08) 56.2% 56.7%,transparent 57%),
+    radial-gradient(circle at 70% 16%,rgba(255,255,255,.22),transparent 7rem)!important;
+  pointer-events:none;
+}
+.vehicle-card-v8::after{
+  content:'UNIRENT';
+  position:absolute;
+  right:-12px;
+  bottom:104px;
+  z-index:0;
+  color:rgba(255,255,255,.045);
+  font-size:64px;
+  font-weight:950;
+  font-style:italic;
+  letter-spacing:-5px;
+  transform:rotate(-7deg);
+  pointer-events:none;
+}
+.vehicle-card-head{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  padding:24px 24px 8px;
+}
+.vehicle-title-block{min-width:0}
+.vehicle-class-pill,.vehicle-stock{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 11px;
+  border-radius:999px;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.78);
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.vehicle-stock{
+  background:linear-gradient(180deg,rgba(123,220,255,.28),rgba(123,220,255,.10));
+  color:#dff8ff;
+  border-color:rgba(123,220,255,.30);
+}
+.vehicle-card-v8 h3,.vehicle-card-v8 .car-title{
+  position:relative;
+  z-index:2;
+  margin:10px 0 0!important;
+  max-width:235px;
+  color:#fff!important;
+  font-size:21px!important;
+  line-height:1.02!important;
+  letter-spacing:-.55px!important;
+}
+.vehicle-card-v8>small,.vehicle-card-v8>.class,.vehicle-card-v8>.car-class{
+  display:none!important;
+}
+.vehicle-card-v8 .tags{
+  position:relative;
+  z-index:2;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px!important;
+  margin:14px 24px 0!important;
+}
+.vehicle-card-v8 .tag{
+  justify-content:center;
+  min-height:36px;
+  padding:0 8px!important;
+  border-radius:14px!important;
+  background:rgba(255,255,255,.105)!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  text-align:center;
+  backdrop-filter:blur(10px);
+}
+.vehicle-card-v8 .tag:nth-child(1)::before{content:'⛽';margin-right:4px;font-size:12px}
+.vehicle-card-v8 .tag:nth-child(2)::before{content:'⚙';margin-right:4px;font-size:12px}
+.vehicle-card-v8 .tag:nth-child(3)::before{content:'▣';margin-right:4px;font-size:12px}
+.vehicle-card-v8 .car-pic,.vehicle-card-v8 .car-img-zone{
+  position:relative!important;
+  z-index:2!important;
+  height:188px!important;
+  margin:18px 18px 14px!important;
+  border-radius:28px!important;
+  overflow:visible!important;
+  background:
+    radial-gradient(ellipse at 50% 86%,rgba(0,0,0,.28),transparent 55%),
+    linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+}
+.vehicle-card-v8 .car-pic::before,.vehicle-card-v8 .car-img-zone::before{
+  content:'';
+  position:absolute;
+  left:12%;right:12%;bottom:24px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:skewX(-24deg);
+}
+.vehicle-card-v8 .fleet-image,.vehicle-card-v8 .car-img-zone img{
+  height:178px!important;
+}
+.vehicle-card-v8 img{
+  transform:translateY(8px) scale(1.04)!important;
+  filter:drop-shadow(0 26px 18px rgba(0,0,0,.42)) drop-shadow(0 0 22px rgba(123,220,255,.12))!important;
+  transition:transform .28s ease,filter .28s ease!important;
+}
+.vehicle-card-v8:hover img{
+  transform:translateY(0) scale(1.095)!important;
+  filter:drop-shadow(0 32px 22px rgba(0,0,0,.46)) drop-shadow(0 0 28px rgba(123,220,255,.20))!important;
+}
+.vehicle-card-v8 .price{
+  position:relative;
+  z-index:2;
+  margin:0 24px!important;
+  padding:17px 18px 16px!important;
+  border-radius:22px!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(246,249,255,.90))!important;
+  color:var(--v8-ink)!important;
+  font-size:31px!important;
+  line-height:1!important;
+  font-weight:950!important;
+  letter-spacing:-1px!important;
+  box-shadow:0 16px 32px rgba(0,0,0,.14)!important;
+  border:1px solid rgba(255,255,255,.62)!important;
+}
+.vehicle-card-v8 .price strong{
+  color:var(--v8-ink)!important;
+}
+.vehicle-card-v8 .price strong::after{display:none!important}
+.vehicle-card-v8 .price::before{
+  content:'od';
+  display:block;
+  margin-bottom:5px;
+  color:var(--v8-muted);
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.vehicle-card-v8 .price::after{
+  content:'/ dan';
+  display:inline-flex;
+  margin-left:7px;
+  color:var(--v8-muted)!important;
+  background:none!important;
+  font-size:13px;
+  font-weight:900;
+  position:static!important;
+  width:auto!important;height:auto!important;
+  transform:none!important;
+}
+.vehicle-card-v8 .price + small,.vehicle-card-v8 .price + .date,.vehicle-card-v8 .price span{
+  position:relative;
+  z-index:2;
+  margin:10px 24px 0!important;
+  color:rgba(255,255,255,.62)!important;
+  font-size:12px!important;
+  font-weight:800!important;
+}
+.vehicle-actions{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.25fr .85fr;
+  gap:10px;
+  padding:16px 24px 24px;
+  margin-top:auto;
+}
+.vehicle-actions .more,.vehicle-actions .card-btn,.vehicle-primary{
+  width:100%!important;
+  height:46px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  font-size:14px!important;
+}
+.vehicle-secondary{
+  width:100%;
+  height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  color:#fff!important;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.16);
+  transition:transform .18s ease,background .18s ease,border-color .18s ease;
+}
+.vehicle-secondary:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.16);
+  border-color:rgba(255,255,255,.28);
+}
+
+/* Homepage fleet can show a tighter teaser grid */
+.fleet .fleet-grid{align-items:stretch!important}
+.fleet .car-card.vehicle-card-v8:nth-child(n+4){display:none}
+.fleet .empty-state{display:none!important}
+
+/* Reservation generated cards should match static cards */
+.cards .vehicle-card-v8 .car-title{font-size:21px!important;color:#fff!important}
+.cards .vehicle-card-v8 .car-class{display:none!important}
+.cards .vehicle-card-v8 .car-img-zone{height:188px!important;margin:18px!important}
+.cards .vehicle-card-v8 .card-btn{height:46px!important}
+
+@media(max-width:1000px){
+  .filters,.toolbar{padding:18px!important;gap:14px!important}
+  .vehicle-card-head{padding:22px 22px 8px}
+  .vehicle-card-v8 .tags{margin-left:22px!important;margin-right:22px!important}
+  .vehicle-card-v8 .price{margin-left:22px!important;margin-right:22px!important}
+  .vehicle-actions{padding-left:22px;padding-right:22px}
+  .fleet .car-card.vehicle-card-v8:nth-child(n+4){display:flex}
+}
+@media(max-width:640px){
+  .filters::before,.toolbar::before{left:18px;top:-13px}
+  .filter-select,.filter,.pill-select select,.switch,.toggle{width:100%!important;min-width:0!important}
+  .vehicle-card-v8 .tags{grid-template-columns:1fr 1fr;}
+  .vehicle-card-v8 .tag:nth-child(3){grid-column:1/-1}
+  .vehicle-actions{grid-template-columns:1fr}
+  .vehicle-card-v8::after{font-size:52px;bottom:118px}
+  .vehicle-card-v8 .price{font-size:29px!important}
+}

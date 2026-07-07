@@ -1,0 +1,1 @@
+V15 fixes: duplicate cards removed, inconsistent prices/classes corrected, homepage main landmark restored, contradictory copy cleaned, unique placeholder visuals generated.

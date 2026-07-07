@@ -1,0 +1,1 @@
+v18 fixes: reservation input text/labels restored, removed cenovnik pseudo capsules, replaced blog assets with stock-style images, tightened blog/kontakt responsive rules, connected conversion strips to footer, enlarged/centered icons.

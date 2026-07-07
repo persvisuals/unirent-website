@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Rezervacija UniRent vozila kroz jasan tok: detalji najma, izbor vozila i kontakt podaci." name="description"/>
+<title>Rezervacija vozila | UniRent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="css/unirent.css" rel="stylesheet"/><link href="css/pages/rezervacija-vozila.css" rel="stylesheet"/><link href="css/unirent-visual-v7.css" rel="stylesheet"/><link href="css/unirent-visual-v8.css" rel="stylesheet"/><link href="css/unirent-visual-v10.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v14.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v17.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v18.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v20.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v22.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v23.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v24.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body class="reservation-v10">
+<header class="topbar">
+<div class="container"><div data-active="rezervacija" data-unirent-nav=""></div></div>
+</header>
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-content reveal">
+<h1>Rezervacija vozila</h1>
+<p>Rezervišite svoje vozilo</p>
+<div aria-label="Koraci rezervacije" class="booking-steps-v10">
+<a class="booking-step-v10 is-active" href="#reservationDetails"><span>1</span><strong>Detalji</strong><em>Datum i lokacija</em></a>
+<a class="booking-step-v10" href="#fleet"><span>2</span><strong>Vozilo</strong><em>Izbor klase</em></a>
+<a class="booking-step-v10" href="#reservationContact"><span>3</span><strong>Kontakt</strong><em>Slanje upita</em></a>
+</div>
+<div class="reservation-shell-v10"><section aria-label="Detalji rezervacije" class="reservation-flow-card-v10" id="reservationDetails">
+<div class="flow-card-head-v10">
+<span class="flow-eyebrow-v10">Korak 1</span>
+<div><h2>Detalji najma</h2><p>Unesite lokaciju, datume i vreme preuzimanja.</p></div>
+</div>
+<form class="reservation-box" id="reservationForm">
+<div class="field"><label>Preuzimanje i vraćanje</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M22 16v2a2 2 0 0 1-2 2h-1a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2V8l3-4h10l3 4h2a2 2 0 0 1 2 2v6Z"></path><circle cx="6" cy="20" r="1"></circle><circle cx="16" cy="20" r="1"></circle></svg><select id="pickup"><option>Aerodrom Nikola Tesla</option><option>Centar Beograda</option><option>Dostava do hotela</option></select><svg class="right-icon" fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><path d="m6 9 6 6 6-6"></path></svg></div></div>
+<div class="field"><label>Datum preuzimanja</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><input id="pickupDate" type="date" value="2026-01-19"/></div></div>
+<div class="field"><label>Broj leta</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M10 9V5a2 2 0 0 1 4 0v4m-9 3h14v7H5z"></path><path d="m8 15 2 2 4-4"></path></svg><input id="flight" placeholder="Broj leta" type="text" value="321"/></div></div>
+<div class="field"><label>Vreme preuzimanja</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><input id="pickupTime" type="time" value="09:00"/></div></div>
+<div class="field"><label>Datum vraćanja</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><input id="returnDate" type="date" value="2026-01-23"/></div></div>
+<div class="field"><label>Vreme vraćanja</label><div class="fake-input"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><input id="returnTime" type="time" value="12:00"/></div></div>
+</form><div class="reservation-action-row-v10"><button class="reserve-hero" id="topReserve" type="button">Rezervišite <span>→</span></button><div class="reservation-helper"><strong>Kako funkcioniše?</strong><span>Izaberite datume, zatim vozilo iz liste. Nakon toga se rezervacija može povezati sa mejlom ili CRM sistemom.</span></div></div></section>
+<aside aria-live="polite" class="reservation-summary-card-v10" id="reservationSummary">
+<div class="summary-top-v10">
+<span class="summary-kicker-v10">Izabrano vozilo</span>
+<span class="summary-status-v10" id="summaryStatus">Čeka izbor</span>
+</div>
+<h3 id="summaryVehicle">Još nije izabrano</h3>
+<p id="summaryMeta">Izaberite vozilo iz ponude ili nastavite iz cenovnika.</p>
+<div class="summary-details-v10">
+<span><b>Lokacija</b><em id="summaryPickup">Aerodrom Nikola Tesla</em></span>
+<span><b>Period</b><em id="summaryDates">19.01.2026 – 23.01.2026</em></span>
+<span><b>Vreme</b><em id="summaryTimes">09:00 – 12:00</em></span>
+</div>
+<a class="summary-action-v10" href="#fleet" id="summaryAction">Pogledajte vozila →</a>
+</aside>
+</div>
+</div>
+</div>
+<div class="hero-car-wrap">
+<img alt="UniRent car" class="hero-car" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/cars/hero/reservation-hero-car.png"/>
+<div class="hero-placeholder" style="display:none">Vizual u pripremi</div>
+</div>
+</section>
+<main class="fleet-section" id="fleet">
+<div class="container">
+<div class="section-head reveal"><h2>Izbor vozila</h2><p>Izaberite vozilo prema klasi, gorivu i početnoj ceni</p></div>
+<div class="filters reveal">
+<div class="filter-left">
+<label class="pill-select"><select id="classFilter"><option value="all">Klasa: Sve</option><option value="B">Grupa B</option><option value="D">Grupa D</option><option value="SUV">Grupa SUV</option></select></label>
+<label class="pill-select"><select id="fuelFilter"><option value="all">Gorivo: Sve</option><option value="Benzin">Benzin</option><option value="Dizel">Dizel</option><option value="Hybrid">Hybrid</option></select></label>
+</div>
+<div class="toggle" id="autoToggle" role="button" tabindex="0"><span>Automatik</span><span class="switch"></span></div>
+</div>
+<div class="cards" id="carGrid"></div>
+<section aria-label="Kontakt podaci za rezervaciju" class="reservation-contact-panel-v10 reveal" id="reservationContact">
+<div class="contact-panel-copy-v10">
+<span class="flow-eyebrow-v10">Korak 3</span>
+<h2>Kontakt podaci</h2>
+<p>Poslednji korak je povezivanje rezervacije sa kontakt formom, mejlom ili CRM sistemom. Za sada forma prikazuje pripremljen statički feedback.</p>
+<div class="contact-summary-mini-v10">
+<span><b id="contactVehicle">Vozilo nije izabrano</b><em id="contactPeriod">Period će se popuniti iz forme</em></span>
+</div>
+</div>
+<form class="booking-contact-form-v10" id="bookingContactForm">
+<label><span>Ime i prezime</span><input id="customerName" placeholder="Unesite ime" required="" type="text"/></label>
+<label><span>Telefon</span><input id="customerPhone" placeholder="+381 ..." required="" type="tel"/></label>
+<label><span>Email</span><input id="customerEmail" placeholder="email@example.com" required="" type="email"/></label>
+<label><span>Napomena</span><textarea id="customerNote" placeholder="Poseban zahtev, adresa hotela, dodatna oprema..." rows="4"></textarea></label>
+<button class="contact-submit-v10" type="submit">Pošaljite upit →</button>
+<p aria-live="polite" class="booking-status-v10" id="bookingStatus"></p>
+</form>
+</section>
+</div>
+</main>
+<div class="selected-panel" id="selectedPanel"><strong id="selectedTitle">Vozilo izabrano</strong><p id="selectedInfo">Nastavite sa rezervacijom.</p></div>
+<div data-unirent-footer=""></div>
+<script defer="" src="js/unirent.js"></script><script defer="" src="js/pages/rezervacija-vozila.js"></script><script src="js/unirent-v14.js"></script>
+</body></html>

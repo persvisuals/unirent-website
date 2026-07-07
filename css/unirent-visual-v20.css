@@ -1,0 +1,25 @@
+
+/* UniRent v20 — real car image placement + asset path guardrails */
+.image-slot.has-image .placeholder,
+.car-img-zone img:not(.is-missing) + .slot{
+  display:none !important;
+}
+.fleet-image img,
+.car-img-zone img,
+.hero-image img,
+.hero-car,
+.feature-image img{
+  object-fit:contain !important;
+  object-position:center bottom !important;
+}
+.vehicle-card-v8 .fleet-image img,
+.vehicle-card-v8 .car-img-zone img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  filter:drop-shadow(0 22px 24px rgba(0,0,0,.34));
+}
+.home-v13 .hero-image img{
+  filter:drop-shadow(0 42px 34px rgba(0,0,0,.40));
+}

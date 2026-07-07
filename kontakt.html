@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="description" content="Kontakt forma za UniRent upite, rezervacije, korporativni najam i pitanja o vozilima."/>
+<title>Kontakt | UniRent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="css/unirent.css" rel="stylesheet"/>
+<link href="css/pages/kontakt.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v7.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v8.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v12.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v14.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v17.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v18.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v20.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v22.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v23.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v24.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body class="contact-v12">
+<header class="page-nav"><div class="container"><div data-active="kontakt" data-unirent-nav=""></div></div></header>
+<section class="page-hero-lite">
+  <div class="container v12-hero-grid">
+    <div class="v12-hero-copy">
+      <span class="v12-eyebrow">Kontakt</span>
+      <h1>Brz upit za najam i preuzimanje vozila</h1>
+      <p>Kontakt strana sada vodi korisnika ka pravom tipu upita: rezervacija, korporativni najam, cene ili dodatne informacije.</p>
+      <div class="v12-hero-metrics" aria-label="Kontakt benefiti">
+        <div class="v12-metric"><strong>24/7</strong><span>online upit</span></div>
+        <div class="v12-metric"><strong>2</strong><span>glavne lokacije</span></div>
+        <div class="v12-metric"><strong>3 koraka</strong><span>do rezervacije</span></div>
+      </div>
+    </div>
+    <aside class="v12-hero-panel car-panel-v22"><img src="assets/cars/hero/reservation-hero-car.png" alt="UniRent vozilo"/></aside>
+  </div>
+</section>
+<main class="page-content">
+  <div class="container">
+    <section class="contact-quick-v12" aria-label="Brze opcije kontakta">
+      <div class="quick-card-v12"><div class="mini">✈</div><strong>Aerodrom</strong><p>Upit za preuzimanje vozila po dolasku na let.</p></div>
+      <div class="quick-card-v12"><div class="mini">€</div><strong>Cenovnik</strong><p>Pošaljite upit iz cene ili direktno iz klase vozila.</p></div>
+      <div class="quick-card-v12"><div class="mini">B2B</div><strong>Korporativno</strong><p>Poseban tok za kompanije, duži najam i ponude.</p></div>
+    </section>
+    <section class="contact-main-v12">
+      <aside class="contact-info-v12">
+        <div class="contact-card v12-contact-card">
+          <div class="card-head"><span class="mini">i</span><strong>Kontakt podaci</strong><p>Polja su pripremljena kao UI placeholderi. Pre objave uneti zvanične podatke klijenta.</p></div>
+          <div class="card-body">
+            <div class="info-row-v12"><span>Email</span><strong>Dodati zvaničan email</strong></div>
+            <div class="info-row-v12"><span>Telefon</span><strong>Dodati zvaničan broj</strong></div>
+            <div class="info-row-v12"><span>Lokacije</span><strong>Aerodrom Nikola Tesla / Beograd</strong></div>
+          </div>
+        </div>
+        <div class="map-card-v12" aria-label="Ilustrativna mapa lokacija">
+          <span class="map-pin-v12 airport"></span><span class="map-pin-v12 city"></span>
+          <h3>Preuzimanje na više lokacija</h3>
+          <p>Vizuelni prostor za mapu, lokacije poslovnica ili aerodromsko preuzimanje.</p>
+        </div>
+      </aside>
+      <section class="form-card v12-form-card">
+        <div class="form-intro"><span class="section-kicker">Upit</span><h2>Pošaljite zahtev za ponudu</h2><p>Forma je vizuelno spremna za produkciju. Sledeći tehnički korak je povezivanje sa email servisom, CRM-om ili backend endpointom.</p></div>
+        <form class="contact-form v12-form" id="contactForm">
+          <label>Ime i prezime<input name="name" placeholder="Unesite ime" required=""/></label>
+          <label>Email<input name="email" placeholder="email@example.com" required="" type="email"/></label>
+          <label>Tip upita<select name="type"><option>Rezervacija vozila</option><option>Korporativni najam</option><option>Informacije o cenama</option><option>Drugo</option></select></label>
+          <label>Telefon<input name="phone" placeholder="Opcionalno"/></label>
+          <label class="full">Poruka<textarea name="message" placeholder="Napišite datume, lokaciju preuzimanja i željenu klasu vozila"></textarea></label>
+          <button type="submit">Pošaljite upit →</button>
+        </form>
+        <p class="form-note v12-note" id="contactStatus">Napomena: ovo je statička forma za UI preview. Pre objave povezati submit sa mejlom ili backendom.</p>
+      </section>
+    </section>
+    <section class="contact-process-v12" aria-label="Tok odgovora">
+      <div class="process-step-v12"><span>1</span><strong>Pošaljite upit</strong><p>Korisnik bira tip upita i šalje osnovne informacije.</p></div>
+      <div class="process-step-v12"><span>2</span><strong>Provera dostupnosti</strong><p>Tim proverava vozilo, datume i lokaciju preuzimanja.</p></div>
+      <div class="process-step-v12"><span>3</span><strong>Ponuda</strong><p>Korisnik dobija cenu, uslove i sledeći korak.</p></div>
+      <div class="process-step-v12"><span>4</span><strong>Rezervacija</strong><p>Detalji se potvrđuju kroz rezervacioni tok.</p></div>
+    </section>
+  </div>
+</main>
+<section class="conversion-strip"><div class="container conversion-grid"><div><h2>Imate spremne datume?</h2><p>Najbrži tok je direktno kroz rezervacionu formu, uz izbor vozila iz liste.</p></div><div class="cta-row"><a class="cta-primary" href="rezervacija-vozila.html">Rezervišite vozilo →</a><a class="cta-secondary" href="cenovnik.html">Pogledajte cenovnik</a></div></div></section>
+<div data-unirent-footer=""></div>
+<script defer src="js/unirent.js"></script>
+<script defer src="js/pages/kontakt.js"></script>
+<script src="js/unirent-v14.js"></script>
+</body>
+</html>

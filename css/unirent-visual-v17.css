@@ -1,0 +1,405 @@
+
+/* UniRent v17 — QA fixes from screenshots
+   Focus: fleet filter alignment, reservation form style, cenovnik shadow cleanup,
+   and robust Blog/Kontakt styling/responsiveness. */
+:root{
+  --v17-blue:#1834a8;
+  --v17-blue-2:#315cff;
+  --v17-ink:#081024;
+  --v17-muted:#6f7688;
+  --v17-line:rgba(8,16,36,.10);
+  --v17-surface:#f5f7fb;
+  --v17-shadow:0 18px 48px rgba(8,16,36,.09);
+}
+
+/* 1) Fleet filters: remove nested card effect and reduce oversized toolbar */
+.fleet-section .toolbar{
+  max-width:1060px !important;
+  margin:0 auto 42px !important;
+  min-height:0 !important;
+  padding:18px 22px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:18px !important;
+  border-radius:26px !important;
+  background:rgba(255,255,255,.88) !important;
+  border:1px solid rgba(8,16,36,.08) !important;
+  box-shadow:0 16px 44px rgba(8,16,36,.065) !important;
+}
+.fleet-section .toolbar > .filters{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+}
+.fleet-section .toolbar > .filters::before{
+  content:none !important;
+  display:none !important;
+}
+.fleet-section .toolbar::before{
+  top:-14px !important;
+  left:24px !important;
+}
+.fleet-section .toolbar .select-wrap,
+.fleet-section .toolbar .pill-select{
+  margin:0 !important;
+}
+.fleet-section .toolbar .filter,
+.fleet-section .toolbar .filter-select,
+.fleet-section .toolbar .pill-select select{
+  height:46px !important;
+  min-width:150px !important;
+  box-shadow:none !important;
+  border-color:#dfe3ee !important;
+}
+.fleet-section .toolbar .switch,
+.fleet-section .toolbar .toggle{
+  height:46px !important;
+  min-width:148px !important;
+  margin:0 !important;
+  box-shadow:none !important;
+  border-color:#dfe3ee !important;
+}
+@media(max-width:720px){
+  .fleet-section .toolbar{
+    align-items:stretch !important;
+    flex-direction:column !important;
+    padding:20px 16px 16px !important;
+    margin-bottom:30px !important;
+  }
+  .fleet-section .toolbar > .filters{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+  .fleet-section .toolbar .filter,
+  .fleet-section .toolbar .filter-select,
+  .fleet-section .toolbar .pill-select select,
+  .fleet-section .toolbar .switch,
+  .fleet-section .toolbar .toggle{
+    width:100% !important;
+    max-width:none !important;
+  }
+}
+
+/* 2) Reservation hero form: make it match the clean card language instead of heavy glass */
+body.reservation-v10 .hero{
+  background:
+    radial-gradient(circle at 76% 22%,rgba(116,216,255,.20),transparent 24rem),
+    radial-gradient(circle at 16% 16%,rgba(255,255,255,.10),transparent 22rem),
+    linear-gradient(180deg,#2145d7 0%,#10246f 48%,#050918 100%) !important;
+}
+body.reservation-v10 .reservation-shell-v10{
+  gap:20px !important;
+}
+body.reservation-v10 .reservation-flow-card-v10,
+body.reservation-v10 .reservation-summary-card-v10{
+  background:linear-gradient(180deg,#ffffff 0%,#f7f9ff 100%) !important;
+  color:var(--v17-ink) !important;
+  border:1px solid rgba(8,16,36,.09) !important;
+  box-shadow:0 24px 70px rgba(3,8,26,.18) !important;
+  backdrop-filter:none !important;
+}
+body.reservation-v10 .reservation-flow-card-v10{
+  padding:26px !important;
+}
+body.reservation-v10 .flow-card-head-v10{
+  color:var(--v17-ink) !important;
+  margin-bottom:20px !important;
+}
+body.reservation-v10 .flow-eyebrow-v10{
+  background:rgba(24,52,168,.08) !important;
+  color:var(--v17-blue) !important;
+  border-color:rgba(24,52,168,.14) !important;
+}
+body.reservation-v10 .flow-card-head-v10 h2{
+  color:var(--v17-ink) !important;
+  font-size:30px !important;
+  letter-spacing:-.04em !important;
+}
+body.reservation-v10 .flow-card-head-v10 p{
+  color:var(--v17-muted) !important;
+  font-size:15px !important;
+}
+body.reservation-v10 .reservation-box{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  padding:0 !important;
+  gap:14px !important;
+}
+body.reservation-v10 .reservation-box .field label,
+body.reservation-v10 .field label{
+  color:#4d5669 !important;
+  text-shadow:none !important;
+  font-size:11px !important;
+  letter-spacing:.08em !important;
+  margin-bottom:8px !important;
+}
+body.reservation-v10 .fake-input,
+body.reservation-v10 .reservation-box .fake-input{
+  height:60px !important;
+  border-radius:18px !important;
+  background:#fff !important;
+  border:1px solid #dfe5f2 !important;
+  box-shadow:0 8px 24px rgba(8,16,36,.045) !important;
+  color:var(--v17-ink) !important;
+  backdrop-filter:none !important;
+}
+body.reservation-v10 .fake-input:hover,
+body.reservation-v10 .fake-input:focus-within{
+  background:#fff !important;
+  border-color:rgba(24,52,168,.38) !important;
+  box-shadow:0 0 0 4px rgba(24,52,168,.08),0 10px 28px rgba(8,16,36,.06) !important;
+}
+body.reservation-v10 .fake-input svg{
+  color:var(--v17-blue) !important;
+  opacity:.95 !important;
+}
+body.reservation-v10 .fake-input input,
+body.reservation-v10 .fake-input select{
+  color:var(--v17-ink) !important;
+  -webkit-text-fill-color:var(--v17-ink) !important;
+  font-weight:900 !important;
+}
+body.reservation-v10 .fake-input select option{
+  color:var(--v17-ink) !important;
+  background:#fff !important;
+}
+body.reservation-v10 .reservation-helper{
+  color:#657084 !important;
+}
+body.reservation-v10 .reservation-helper strong{
+  color:var(--v17-ink) !important;
+}
+body.reservation-v10 .reserve-hero{
+  background:linear-gradient(180deg,var(--v17-blue-2),var(--v17-blue)) !important;
+  color:#fff !important;
+  box-shadow:0 18px 38px rgba(24,52,168,.24) !important;
+}
+body.reservation-v10 .summary-kicker-v10{
+  color:rgba(24,52,168,.72) !important;
+}
+body.reservation-v10 .summary-status-v10{
+  background:rgba(24,52,168,.08) !important;
+  border-color:rgba(24,52,168,.14) !important;
+  color:var(--v17-blue) !important;
+}
+body.reservation-v10 .reservation-summary-card-v10 h3{
+  color:var(--v17-ink) !important;
+}
+body.reservation-v10 .reservation-summary-card-v10 p{
+  color:var(--v17-muted) !important;
+}
+body.reservation-v10 .summary-details-v10 span{
+  background:#f3f6ff !important;
+  border:1px solid #e0e6f5 !important;
+}
+body.reservation-v10 .summary-details-v10 b{
+  color:#7a8396 !important;
+}
+body.reservation-v10 .summary-details-v10 em{
+  color:var(--v17-ink) !important;
+}
+body.reservation-v10 .summary-action-v10,
+body.reservation-v10 .reservation-summary-card-v10.has-car .summary-action-v10{
+  background:linear-gradient(180deg,var(--v17-blue-2),var(--v17-blue)) !important;
+  color:#fff !important;
+}
+
+/* 3) Cenovnik: remove the heavy sticky shadows/fades and clipped group chip */
+.pricing-table th:nth-child(1),
+.pricing-table td:nth-child(1),
+.pricing-table th:nth-child(2),
+.pricing-table td:nth-child(2),
+.pricing-table th:last-child,
+.pricing-table td:last-child{
+  box-shadow:none !important;
+}
+.pricing-table td:nth-child(2),
+.pricing-table td:last-child{
+  background:#fff !important;
+}
+.pricing-table tbody td:first-child{
+  font-size:14px !important;
+  color:var(--v17-blue) !important;
+  font-weight:950 !important;
+  white-space:nowrap !important;
+}
+.pricing-table tbody td:first-child::before{
+  content:none !important;
+  display:none !important;
+}
+.pricing-table tbody tr:hover td{
+  background:#f7f9ff !important;
+}
+.pricing-table .price-reserve,
+.price-reserve{
+  box-shadow:0 10px 24px rgba(24,52,168,.18) !important;
+}
+@media(min-width:901px){
+  .pricing-table th:nth-child(2),
+  .pricing-table td:nth-child(2){
+    border-right:1px solid rgba(24,52,168,.06) !important;
+  }
+  .pricing-table th:last-child,
+  .pricing-table td:last-child{
+    border-left:1px solid rgba(24,52,168,.06) !important;
+  }
+}
+
+/* 4) Blog + Kontakt robust styling: reconnect visual system and make responsive */
+.blog-v12,
+.contact-v12{
+  font-family:'Inter Tight',Arial,sans-serif !important;
+  background:#f4f6fb !important;
+  color:var(--v17-ink) !important;
+  overflow-x:hidden !important;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.blog-v12 a,
+.contact-v12 a{
+  text-decoration:none !important;
+}
+.blog-v12 .container,
+.contact-v12 .container{
+  width:min(100% - 72px,1180px) !important;
+  max-width:1180px !important;
+  margin-inline:auto !important;
+}
+.blog-v12 .page-nav,
+.contact-v12 .page-nav{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  z-index:50 !important;
+  background:transparent !important;
+}
+.blog-v12 .page-nav .nav,
+.contact-v12 .page-nav .nav{
+  color:#fff !important;
+  height:78px !important;
+}
+.blog-v12 .page-nav .logo,
+.contact-v12 .page-nav .logo{
+  color:#fff !important;
+}
+.blog-v12 .page-hero-lite,
+.contact-v12 .page-hero-lite{
+  position:relative !important;
+  overflow:hidden !important;
+  padding:132px 0 86px !important;
+  min-height:auto !important;
+  color:#fff !important;
+  background:
+    radial-gradient(circle at 82% 22%,rgba(116,216,255,.18),transparent 23rem),
+    radial-gradient(circle at 10% 12%,rgba(255,255,255,.12),transparent 21rem),
+    linear-gradient(180deg,#2247dc 0%,#112b82 46%,#050918 100%) !important;
+}
+.blog-v12 .page-hero-lite::after,
+.contact-v12 .page-hero-lite::after{
+  height:110px !important;
+  background:linear-gradient(180deg,transparent,#f4f6fb) !important;
+}
+.blog-v12 .v12-hero-grid,
+.contact-v12 .v12-hero-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.55fr) !important;
+  gap:34px !important;
+  align-items:center !important;
+}
+.blog-v12 .v12-hero-copy h1,
+.contact-v12 .v12-hero-copy h1{
+  font-family:'Inter Tight',Arial,sans-serif !important;
+  font-size:clamp(42px,5.6vw,72px) !important;
+  line-height:.96 !important;
+  letter-spacing:-.045em !important;
+  font-weight:900 !important;
+  max-width:820px !important;
+  margin:0 0 18px !important;
+  text-wrap:balance;
+}
+.blog-v12 .v12-hero-copy p,
+.contact-v12 .v12-hero-copy p{
+  color:rgba(255,255,255,.76) !important;
+  font-size:clamp(17px,1.55vw,21px) !important;
+  line-height:1.44 !important;
+  max-width:700px !important;
+  font-weight:650 !important;
+}
+.blog-v12 .v12-hero-panel,
+.contact-v12 .v12-hero-panel{
+  align-self:center !important;
+}
+.blog-v12 .page-content,
+.contact-v12 .page-content{
+  background:linear-gradient(180deg,#f4f6fb 0%,#fff 100%) !important;
+  padding:54px 0 82px !important;
+}
+.blog-v12 .featured-article-v12,
+.blog-v12 .sidebar-card-v12,
+.blog-v12 .article-card,
+.contact-v12 .quick-card-v12,
+.contact-v12 .contact-card,
+.contact-v12 .form-card,
+.contact-v12 .map-card-v12,
+.contact-v12 .process-step-v12{
+  font-family:'Inter Tight',Arial,sans-serif !important;
+}
+.contact-v12 .contact-form.v12-form{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+}
+.contact-v12 .contact-form.v12-form label:nth-child(5),
+.contact-v12 .contact-form.v12-form button,
+.contact-v12 .form-note.v12-note{
+  grid-column:1/-1 !important;
+}
+@media(max-width:1050px){
+  .blog-v12 .v12-hero-grid,
+  .contact-v12 .v12-hero-grid{
+    grid-template-columns:1fr !important;
+    align-items:start !important;
+  }
+  .blog-v12 .blog-layout-v12,
+  .contact-v12 .contact-main-v12{
+    grid-template-columns:1fr !important;
+  }
+}
+@media(max-width:720px){
+  .blog-v12 .container,
+  .contact-v12 .container{
+    width:min(100% - 30px,1180px) !important;
+  }
+  .blog-v12 .page-hero-lite,
+  .contact-v12 .page-hero-lite{
+    padding:104px 0 62px !important;
+  }
+  .blog-v12 .v12-hero-copy h1,
+  .contact-v12 .v12-hero-copy h1{
+    font-size:clamp(36px,11vw,52px) !important;
+    line-height:1 !important;
+  }
+  .blog-v12 .v12-hero-metrics,
+  .contact-v12 .v12-hero-metrics,
+  .contact-v12 .contact-quick-v12,
+  .contact-v12 .contact-process-v12,
+  .contact-v12 .contact-form.v12-form{
+    grid-template-columns:1fr !important;
+  }
+  .blog-v12 .featured-article-v12{
+    grid-template-columns:1fr !important;
+  }
+  .blog-v12 .article-grid.v12-grid{
+    grid-template-columns:1fr !important;
+  }
+}

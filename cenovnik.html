@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="description" content="UniRent cenovnik najma vozila sa brzim izborom vozila i direktnom rezervacijom."/>
+<title>Cenovnik | UniRent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="css/unirent.css" rel="stylesheet"/><link href="css/pages/cenovnik.css" rel="stylesheet"/><link href="css/unirent-visual-v7.css" rel="stylesheet"/><link href="css/unirent-visual-v8.css" rel="stylesheet"/><link href="css/unirent-visual-v9.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v14.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v17.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v18.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v20.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v22.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v23.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v24.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="topbar">
+<div class="container"><div data-active="cenovnik" data-unirent-nav=""></div></div>
+</header>
+<main>
+<div class="container">
+<section class="intro reveal">
+<div><h1>Cenovnik iznajmljivanja vozila</h1><button class="date-pill" type="button">11. jan 2026 – 30. jun 2026</button></div>
+<div class="tools"><input aria-label="Pretraga vozila" class="search" id="search" placeholder="Pretraga vozila..."/><label class="select-wrap"><select class="select" id="groupFilter"><option value="all">Sve grupe</option><option>Grupa A</option><option>Grupa B</option><option>Grupa C</option><option>Grupa D</option><option>Grupa SUV</option><option>Grupa VAN</option></select></label><span id="priceResultStatus" class="result-status" aria-live="polite"></span></div>
+</section>
+<section class="price-overview reveal" aria-label="Pregled cenovnika">
+  <article class="price-overview-card primary">
+    <span>Period važenja</span>
+    <strong>11. jan – 30. jun 2026.</strong>
+    <p>Cene su organizovane po dužini najma, od jednog dana do 16+ dana.</p>
+  </article>
+  <article class="price-overview-card">
+    <span>Brza akcija</span>
+    <strong>Rezervacija iz reda</strong>
+    <p>Svako vozilo u tabeli ima direktan put ka rezervacionoj strani.</p>
+  </article>
+  <article class="price-overview-card">
+    <span>Valuta</span>
+    <strong>EUR / dan</strong>
+    <p>Prikazane cene su dnevne i mogu se zameniti finalnim cenovnikom.</p>
+  </article>
+</section>
+<h2 class="period-title reveal">Standardne klase vozila</h2>
+<section class="table-card pricing-table-card reveal"><div class="table-meta"><span>Standardni cenovnik</span><small>Skrolujte horizontalno za sve periode najma</small></div><div class="table-wrap"><table class="pricing-table" id="priceTable"><thead><tr><th>Grupa</th><th>Marka vozila</th><th>1 dan</th><th>2–3 dana</th><th>4–6 dana</th><th>7–10 dana</th><th>11–15 dana</th><th>16+ dana</th><th class="price-action-head">Rezervacija</th></tr></thead><tbody><tr data-group="Grupa A"><td>Grupa A</td><td>Fiat Panda / Toyota Aygo</td><td>36.42 €</td><td>28.00 €</td><td>25.00 €</td><td>22.00 €</td><td>21.00 €</td><td>20.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Fiat Panda / Toyota Aygo" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Fiat+Panda+%2F+Toyota+Aygo&amp;group=Grupa+A&amp;price=36.42+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa A"><td>Grupa A</td><td>VW Polo / Opel Corsa</td><td>38.50 €</td><td>30.00 €</td><td>27.00 €</td><td>24.00 €</td><td>22.00 €</td><td>21.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Polo / Opel Corsa" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Polo+%2F+Opel+Corsa&amp;group=Grupa+A&amp;price=38.50+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa B"><td>Grupa B</td><td>Skoda Fabia / Renault Clio</td><td>42.00 €</td><td>34.00 €</td><td>31.00 €</td><td>28.00 €</td><td>25.00 €</td><td>24.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Skoda Fabia / Renault Clio" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Skoda+Fabia+%2F+Renault+Clio&amp;group=Grupa+B&amp;price=42.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa C"><td>Grupa C</td><td>VW Golf / Toyota Corolla</td><td>51.00 €</td><td>44.00 €</td><td>40.00 €</td><td>36.00 €</td><td>33.00 €</td><td>31.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Golf / Toyota Corolla" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Golf+%2F+Toyota+Corolla&amp;group=Grupa+C&amp;price=51.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa D"><td>Grupa D</td><td>Skoda Octavia / VW Passat</td><td>58.00 €</td><td>50.00 €</td><td>46.00 €</td><td>42.00 €</td><td>39.00 €</td><td>36.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Skoda Octavia / VW Passat" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Skoda+Octavia+%2F+VW+Passat&amp;group=Grupa+D&amp;price=58.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa SUV"><td>Grupa SUV</td><td>Hyundai Tucson / Toyota RAV4</td><td>72.00 €</td><td>64.00 €</td><td>58.00 €</td><td>52.00 €</td><td>48.00 €</td><td>44.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Hyundai Tucson / Toyota RAV4" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Hyundai+Tucson+%2F+Toyota+RAV4&amp;group=Grupa+SUV&amp;price=72.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa SUV"><td>Grupa SUV</td><td>Hyundai Santa Fe / Volvo XC90</td><td>95.00 €</td><td>86.00 €</td><td>78.00 €</td><td>70.00 €</td><td>64.00 €</td><td>59.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Hyundai Santa Fe / Volvo XC90" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Hyundai+Santa+Fe+%2F+Volvo+XC90&amp;group=Grupa+SUV&amp;price=95.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa VAN"><td>Grupa VAN</td><td>VW Caddy / Opel Combo</td><td>62.00 €</td><td>55.00 €</td><td>50.00 €</td><td>46.00 €</td><td>42.00 €</td><td>39.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Caddy / Opel Combo" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Caddy+%2F+Opel+Combo&amp;group=Grupa+VAN&amp;price=62.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa VAN"><td>Grupa VAN</td><td>Mercedes Vito / VW Transporter</td><td>88.00 €</td><td>80.00 €</td><td>74.00 €</td><td>68.00 €</td><td>62.00 €</td><td>57.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Mercedes Vito / VW Transporter" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Mercedes+Vito+%2F+VW+Transporter&amp;group=Grupa+VAN&amp;price=88.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr></tbody></table></div></section>
+<div class="section-label reveal"><h2>Dodatne klase vozila</h2><span class="date-pill" style="padding:12px 22px;font-size:13px">Dodatne cene</span></div>
+<section class="table-card pricing-table-card reveal"><div class="table-meta"><span>Dodatne klase i periodi</span><small>Rezervacija je dostupna direktno iz svakog reda</small></div><div class="table-wrap"><table class="pricing-table" id="priceTable2"><thead><tr><th>Grupa</th><th>Marka vozila</th><th>1 dan</th><th>2–3 dana</th><th>4–6 dana</th><th>7–10 dana</th><th>11–15 dana</th><th>16+ dana</th><th class="price-action-head">Rezervacija</th></tr></thead><tbody><tr data-group="Grupa A"><td>Grupa A</td><td>Fiat Panda / Toyota Aygo</td><td>41.42 €</td><td>32.00 €</td><td>29.00 €</td><td>25.00 €</td><td>24.00 €</td><td>23.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Fiat Panda / Toyota Aygo" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Fiat+Panda+%2F+Toyota+Aygo&amp;group=Grupa+A&amp;price=41.42+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa A"><td>Grupa A</td><td>VW Polo / Opel Corsa</td><td>43.50 €</td><td>34.00 €</td><td>31.00 €</td><td>27.00 €</td><td>25.00 €</td><td>24.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Polo / Opel Corsa" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Polo+%2F+Opel+Corsa&amp;group=Grupa+A&amp;price=43.50+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa B"><td>Grupa B</td><td>Skoda Fabia / Renault Clio</td><td>47.00 €</td><td>38.00 €</td><td>35.00 €</td><td>31.00 €</td><td>28.00 €</td><td>27.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Skoda Fabia / Renault Clio" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Skoda+Fabia+%2F+Renault+Clio&amp;group=Grupa+B&amp;price=47.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa C"><td>Grupa C</td><td>VW Golf / Toyota Corolla</td><td>56.00 €</td><td>48.00 €</td><td>44.00 €</td><td>39.00 €</td><td>36.00 €</td><td>34.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Golf / Toyota Corolla" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Golf+%2F+Toyota+Corolla&amp;group=Grupa+C&amp;price=56.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa D"><td>Grupa D</td><td>Skoda Octavia / VW Passat</td><td>63.00 €</td><td>54.00 €</td><td>50.00 €</td><td>45.00 €</td><td>42.00 €</td><td>39.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Skoda Octavia / VW Passat" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Skoda+Octavia+%2F+VW+Passat&amp;group=Grupa+D&amp;price=63.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa SUV"><td>Grupa SUV</td><td>Hyundai Tucson / Toyota RAV4</td><td>77.00 €</td><td>68.00 €</td><td>62.00 €</td><td>55.00 €</td><td>51.00 €</td><td>47.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Hyundai Tucson / Toyota RAV4" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Hyundai+Tucson+%2F+Toyota+RAV4&amp;group=Grupa+SUV&amp;price=77.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa SUV"><td>Grupa SUV</td><td>Hyundai Santa Fe / Volvo XC90</td><td>100.00 €</td><td>90.00 €</td><td>82.00 €</td><td>73.00 €</td><td>67.00 €</td><td>62.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Hyundai Santa Fe / Volvo XC90" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Hyundai+Santa+Fe+%2F+Volvo+XC90&amp;group=Grupa+SUV&amp;price=100.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa VAN"><td>Grupa VAN</td><td>VW Caddy / Opel Combo</td><td>67.00 €</td><td>59.00 €</td><td>54.00 €</td><td>49.00 €</td><td>45.00 €</td><td>42.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite VW Caddy / Opel Combo" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=VW+Caddy+%2F+Opel+Combo&amp;group=Grupa+VAN&amp;price=67.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr>
+<tr data-group="Grupa VAN"><td>Grupa VAN</td><td>Mercedes Vito / VW Transporter</td><td>93.00 €</td><td>84.00 €</td><td>78.00 €</td><td>71.00 €</td><td>65.00 €</td><td>60.00 €</td><td class="price-action-cell"><a aria-label="Rezervišite Mercedes Vito / VW Transporter" class="price-reserve-link" href="rezervacija-podaci.html?vehicle=Mercedes+Vito+%2F+VW+Transporter&amp;group=Grupa+VAN&amp;price=93.00+%E2%82%AC&amp;source=cenovnik">Rezervišite →</a></td></tr></tbody></table></div></section>
+<section class="note-grid reveal"><div class="note"><strong>Cene su dnevne</strong><p>Prikazane vrednosti su informativne i mogu se lako zameniti pravim cenama u tabeli.</p></div><div class="note"><strong>Popusti za duži najam</strong><p>Kolone su organizovane tako da jasno pokažu nižu cenu za duže periode najma.</p></div><div class="note"><strong>Direktna rezervacija</strong><p>Svaki red ima jasan CTA, a podaci o vozilu, grupi i početnoj ceni se prosleđuju u rezervaciju.</p></div></section>
+</div>
+</main>
+<section class="conversion-strip"><div class="container conversion-grid"><div><h2>Brza rezervacija iz ponude</h2><p>Svaka cena i svako vozilo mogu da vode direktno u rezervacioni proces, bez vraćanja korisnika na početak sajta.</p></div><div class="cta-row"><a class="cta-primary" href="rezervacija-vozila.html">Rezervišite vozilo →</a><a class="cta-secondary" href="kontakt.html">Pošaljite upit</a></div></div></section>
+<div data-unirent-footer=""></div>
+<script defer="" src="js/unirent.js"></script><script defer="" src="js/pages/cenovnik.js"></script><script src="js/unirent-v14.js"></script>
+</body></html>

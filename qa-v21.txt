@@ -1,0 +1,1 @@
+v21: Replaced car PNG assets with user-supplied background-removed PNGs. Synced active assets/cars/fleet and assets/cars/hero paths, plus legacy fallback paths.

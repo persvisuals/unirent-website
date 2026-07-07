@@ -1,0 +1,6 @@
+v20: Organized real car images into canonical folders and updated HTML/JS references.
+Canonical folders:
+- assets/cars/fleet/ — individual car photos used in cards and reservation lists.
+- assets/cars/hero/ — hero and feature car photos used by homepage, reservation, terms and fleet pages.
+Legacy image paths are kept in the package for safety, but active code now points to the canonical folders.
+Active HTML/JS image reference check: OK

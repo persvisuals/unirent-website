@@ -1,0 +1,1 @@
+v16 fixes: removed duplicate filter label, improved homepage hero heading readability, swapped hero/trust text badges for icons, removed homepage route cards.

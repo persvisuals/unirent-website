@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="UniRent rent-a-car Beograd - brza rezervacija vozila, jasne cene, podrška 24/7 i fleksibilno preuzimanje." name="description"/>
+  <title>UniRent | Rent-a-car Beograd</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="css/unirent.css" rel="stylesheet"/>
+  <link href="css/pages/index.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body class="taste-home">
+  <header class="taste-hero">
+    <h1 class="sr-only">UniRent rent-a-car Beograd</h1>
+    <div class="container"><div data-active="home" data-unirent-nav=""></div></div>
+
+    <div class="container taste-hero-grid">
+      <div class="taste-hero-copy reveal">
+        <span class="taste-kicker">Rent-a-car Beograd</span>
+        <h2>Vozilo spremno pre sletanja.</h2>
+        <p>Rezervacija za aerodrom, grad i duže rute, sa jasnim cenama i podrškom tokom celog najma.</p>
+        <div class="taste-hero-actions" aria-label="Glavne akcije">
+          <a class="taste-btn taste-btn-light" href="rezervacija-vozila.html">Rezervišite vozilo →</a>
+          <a class="taste-btn taste-btn-ghost" href="vozni-park.html">Pogledajte vozni park</a>
+        </div>
+        <dl class="taste-proof" aria-label="UniRent ukratko">
+          <div><dt>70+</dt><dd>tipova vozila</dd></div>
+          <div><dt>24/7</dt><dd>podrška</dd></div>
+          <div><dt>0</dt><dd>skrivenih troškova</dd></div>
+        </dl>
+      </div>
+
+      <aside class="taste-booking booking reveal" aria-label="Brza rezervacija">
+        <div class="taste-booking-top">
+          <div>
+            <strong>Brza rezervacija</strong>
+            <span>Unesite termin i nastavite ka izboru vozila.</span>
+          </div>
+          <span class="taste-live-pill">Online 24/7</span>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Tip vozila">
+          <button class="tab active" data-vehicle="cars" type="button">Automobili</button>
+          <button class="tab" data-vehicle="mini-vans" type="button">Mini-van</button>
+        </div>
+
+        <div class="booking-form">
+          <div class="field-wrap pickup-group">
+            <label>Preuzimanje i vraćanje</label>
+            <div class="field single"><span class="field-mark">⌁</span><span>Aerodrom Nikola Tesla</span></div>
+            <div class="return-loc">+ Druga lokacija vraćanja</div>
+          </div>
+          <div class="field-wrap">
+            <label>Datum preuzimanja</label>
+            <div class="field input"><input id="pickupDate" type="date" value="2026-07-15"/></div>
+          </div>
+          <div class="field-wrap">
+            <label>Vreme preuzimanja</label>
+            <div class="field input"><input id="pickupTime" type="time" value="12:00"/></div>
+          </div>
+          <div class="field-wrap">
+            <label>Datum vraćanja</label>
+            <div class="field input"><input id="returnDate" type="date" value="2026-07-19"/></div>
+          </div>
+          <div class="field-wrap">
+            <label>Vreme vraćanja</label>
+            <div class="field input"><input id="returnTime" type="time" value="12:00"/></div>
+          </div>
+        </div>
+
+        <div class="taste-booking-bottom">
+          <div class="corp">Korporativni popust dostupan na upit</div>
+          <button class="btn" id="reserveBtn" type="button">Nastavite rezervaciju →</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="container taste-hero-visual" aria-hidden="true">
+      <div class="taste-route-card taste-route-main">
+        <span>Aerodrom Nikola Tesla</span>
+        <strong>preuzimanje odmah po dolasku</strong>
+      </div>
+      <div class="image-slot taste-hero-car">
+        <img alt="UniRent vozilo" data-fallback="" src="assets/cars/hero/home-hero-car.png"/>
+        <div class="placeholder hero-placeholder"><span>UniRent vozilo</span></div>
+      </div>
+      <div class="taste-route-card taste-route-alt">
+        <span>Beograd i duže rute</span>
+        <strong>jasni uslovi pre rezervacije</strong>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="taste-trust" aria-label="Prednosti UniRent usluge">
+      <div class="container taste-trust-grid">
+        <article>
+          <span class="trust-icon">€</span>
+          <h2>Jasne cene</h2>
+          <p>Cenovnik je pregledan, a troškovi su prikazani pre nego što nastavite rezervaciju.</p>
+        </article>
+        <article>
+          <span class="trust-icon">24</span>
+          <h2>Podrška 24/7</h2>
+          <p>Pomoć tokom najma i podrška na putu kada vam je zaista potrebna.</p>
+        </article>
+        <article>
+          <span class="trust-icon">✈</span>
+          <h2>Aerodrom</h2>
+          <p>Praktično preuzimanje vozila za putnike koji stižu u Beograd.</p>
+        </article>
+        <article>
+          <span class="trust-icon">✓</span>
+          <h2>Fleksibilan izbor</h2>
+          <p>Gradska vozila, poslovne klase, SUV modeli i veće opcije za porodicu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="taste-process section" aria-label="Tok rezervacije">
+      <div class="container taste-section-head reveal">
+        <span class="section-kicker">Proces</span>
+        <h2>Tri koraka bez lutanja.</h2>
+        <p>Početna strana vodi korisnika od termina do konkretnog vozila i završne forme.</p>
+      </div>
+      <div class="container taste-process-grid">
+        <article class="taste-step reveal">
+          <span>01</span>
+          <h3>Unesite termin</h3>
+          <p>Datum, vreme i lokacija postavljaju osnovu rezervacije.</p>
+        </article>
+        <article class="taste-step taste-step-raised reveal">
+          <span>02</span>
+          <h3>Izaberite vozilo</h3>
+          <p>Filtrirajte po klasi, gorivu i menjaču, pa pređite na detalje.</p>
+        </article>
+        <article class="taste-step reveal">
+          <span>03</span>
+          <h3>Pošaljite upit</h3>
+          <p>Finalni korak skuplja podatke i ostavlja pregledan trag rezervacije.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="taste-benefits section" id="o-nama">
+      <div class="container taste-section-head reveal">
+        <span class="section-kicker">Prednosti</span>
+        <h2>Najam bez sitnih slova.</h2>
+        <p>Glavne informacije su izvučene napred, tako da korisnik odmah razume šta dobija.</p>
+      </div>
+      <div class="container taste-benefit-grid">
+        <article class="taste-benefit-card taste-benefit-main reveal">
+          <div>
+            <span class="taste-card-label">Uključeno u cenu</span>
+            <h3>Kasko osiguranje na sva vozila</h3>
+            <p>Sigurniji najam za gradske vožnje, poslovne termine i duže rute.</p>
+          </div>
+          <div class="image-slot taste-feature-car">
+            <img alt="UniRent vozilo" data-fallback="" src="assets/cars/hero/feature-car.png"/>
+            <div class="placeholder why-placeholder"><span>UniRent vozilo</span></div>
+          </div>
+        </article>
+        <article class="taste-benefit-card reveal">
+          <span class="taste-card-label">Vozni park</span>
+          <h3>Preko 70 tipova vozila</h3>
+          <p>Od kompaktnih modela do SUV i poslovnih klasa.</p>
+        </article>
+        <article class="taste-benefit-card reveal">
+          <span class="taste-card-label">Kilometraža</span>
+          <h3>Neograničeno za 3+ dana</h3>
+          <p>Jasno razdvojeni uslovi za kraće i duže najmove.</p>
+        </article>
+        <article class="taste-benefit-card reveal">
+          <span class="taste-card-label">Transparentno</span>
+          <h3>Bez skrivenih troškova</h3>
+          <p>Cena, depozit i uslovi se prikazuju pre slanja upita.</p>
+        </article>
+        <article class="taste-benefit-card reveal">
+          <span class="taste-card-label">Podrška</span>
+          <h3>Pomoć tokom celog najma</h3>
+          <p>Brza komunikacija za preuzimanje, izmene termina i pomoć na putu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="fleet taste-fleet" aria-label="Izdvojena vozila">
+      <div class="container taste-section-head reveal">
+        <span class="section-kicker">Ponuda</span>
+        <h2>Vozila izdvojena iz ponude.</h2>
+        <p>Brzi pregled popularnih klasa, sa cenom i direktnim prelazom na rezervaciju.</p>
+      </div>
+
+      <div class="container filters reveal" aria-label="Filteri vozila">
+        <div class="filter-group">
+          <select class="filter-select" id="classFilter" aria-label="Klasa vozila">
+            <option value="all">Klasa: Sve</option>
+            <option value="B">Grupa B</option>
+            <option value="D">Grupa D</option>
+            <option value="SUV">Grupa SUV</option>
+          </select>
+          <select class="filter-select" id="fuelFilter" aria-label="Gorivo">
+            <option value="all">Gorivo: Sve</option>
+            <option value="Benzin">Benzin</option>
+            <option value="Dizel">Dizel</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+        </div>
+        <button aria-pressed="true" class="switch" id="autoSwitch" type="button">Automatik <span class="track"></span></button>
+      </div>
+
+      <div class="container fleet-grid" id="fleetGrid">
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa SUV</span><h3>Hyundai Santa Fe 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="Hyundai Santa Fe 4x4" data-fallback="" src="assets/cars/fleet/hyundai-santa-fe.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>95 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite Hyundai Santa Fe 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Hyundai+Santa+Fe+4x4&amp;group=Grupa+SUV&amp;price=95+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="B" data-fuel="Benzin">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa B</span><h3>VW Taigo Automatic TSI</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Benzin</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="VW Taigo Automatic TSI" data-fallback="" src="assets/cars/fleet/vw-taigo.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>42 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite VW Taigo Automatic TSI" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=VW+Taigo+Automatic+TSI&amp;group=Grupa+B&amp;price=42+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="D" data-fuel="Dizel">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa D</span><h3>Skoda Superb 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="Skoda Superb 4x4" data-fallback="" src="assets/cars/fleet/skoda-superb.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>58 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite Skoda Superb 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Skoda+Superb+4x4&amp;group=Grupa+D&amp;price=58+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa SUV</span><h3>Volvo XC90 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="Volvo XC90 4x4" data-fallback="" src="assets/cars/fleet/volvo-xc90.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>95 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite Volvo XC90 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Volvo+XC90+4x4&amp;group=Grupa+SUV&amp;price=95+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Hybrid">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa SUV</span><h3>Toyota RAV4 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Hybrid</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="Toyota RAV4 4x4" data-fallback="" src="assets/cars/fleet/toyota-rav4.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>72 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite Toyota RAV4 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Toyota+RAV4+4x4&amp;group=Grupa+SUV&amp;price=72+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+
+        <article class="car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel">
+          <div class="vehicle-card-head"><div><span class="vehicle-class-pill">Grupa SUV</span><h3>Hyundai Tucson 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+          <div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+          <div class="car-pic"><div class="image-slot fleet-image"><img alt="Hyundai Tucson 4x4" data-fallback="" src="assets/cars/fleet/hyundai-tucson.png"/><div class="placeholder fleet-placeholder"><span>Slika vozila</span></div></div></div>
+          <div class="price"><span>od</span><strong>72 €</strong><small>/ dan</small></div>
+          <div class="vehicle-actions"><a aria-label="Rezervišite Hyundai Tucson 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Hyundai+Tucson+4x4&amp;group=Grupa+SUV&amp;price=72+%E2%82%AC&amp;source=home">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div>
+        </article>
+        <div class="empty-state" id="emptyState">Nema vozila za izabrane filtere.</div>
+      </div>
+    </section>
+
+    <section class="taste-conversion" aria-label="Poziv na rezervaciju">
+      <div class="container taste-conversion-grid">
+        <div>
+          <span class="taste-kicker dark">Rezervacija</span>
+          <h2>Spremni za sledeću vožnju?</h2>
+          <p>Izaberite termin, proverite ponudu i završite upit kroz nastavak rezervacije.</p>
+        </div>
+        <div class="cta-row">
+          <a class="cta-primary" href="rezervacija-vozila.html">Rezervišite vozilo →</a>
+          <a class="cta-secondary" href="cenovnik.html">Pogledajte cenovnik</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog taste-blog" id="blog">
+      <div class="container taste-section-head reveal">
+        <span class="section-kicker">Saveti</span>
+        <h2>Kratki vodiči za najam.</h2>
+        <p>Praktične teme koje pomažu korisniku pre slanja upita.</p>
+      </div>
+      <div class="container blog-grid">
+        <article class="blog-card reveal"><div class="image-slot blog-image"><img alt="Blog vizual" data-fallback="" src="assets/blog-1.jpg"/><div class="placeholder blog-placeholder"><span>Blog vizual</span></div></div><div class="blog-body"><h3>Kako izabrati idealno vozilo?</h3><p>Izbor klase prema broju putnika, prtljagu i dužini putovanja.</p><a class="more blog-more" href="blog.html#article-1">Pročitaj više →</a></div></article>
+        <article class="blog-card reveal"><div class="image-slot blog-image"><img alt="Blog vizual" data-fallback="" src="assets/blog-2.jpg"/><div class="placeholder blog-placeholder"><span>Blog vizual</span></div></div><div class="blog-body"><h3>Preuzimanje bez zastoja</h3><p>Dokumenta, depozit i detalji koje vredi pripremiti ranije.</p><a class="more blog-more" href="blog.html#article-2">Pročitaj više →</a></div></article>
+        <article class="blog-card reveal"><div class="image-slot blog-image"><img alt="Blog vizual" data-fallback="" src="assets/blog-3.jpg"/><div class="placeholder blog-placeholder"><span>Blog vizual</span></div></div><div class="blog-body"><h3>Najam vozila na aerodromu</h3><p>Saveti za brzo preuzimanje odmah po dolasku u Beograd.</p><a class="more blog-more" href="blog.html#article-3">Pročitaj više →</a></div></article>
+      </div>
+    </section>
+  </main>
+
+  <div data-unirent-footer=""></div>
+  <script defer src="js/unirent.js"></script>
+  <script defer src="js/pages/index.js"></script>
+  <script src="js/unirent-v14.js"></script>
+</body>
+</html>

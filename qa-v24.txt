@@ -1,0 +1,1 @@
+v24 fixes: contact form inputs constrained to card width, reservation field outer strokes removed, helper shadow removed, vehicle card price markup/CSS rebuilt to avoid black text and line breaks.

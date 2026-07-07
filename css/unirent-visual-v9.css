@@ -1,0 +1,409 @@
+/* UniRent v9 — Step 3: pricing page/table redesign */
+body:has(.pricing-table-card){
+  background:
+    radial-gradient(circle at 8% 14%, rgba(24,52,168,.09), transparent 28%),
+    linear-gradient(180deg,#f8faff 0%,#fff 30%,#f5f7fb 100%);
+}
+body:has(.pricing-table-card) main{
+  padding-top:54px;
+}
+body:has(.pricing-table-card) .intro{
+  align-items:center;
+  margin-bottom:22px;
+  padding:34px;
+  border:1px solid rgba(24,52,168,.10);
+  border-radius:34px;
+  background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(247,249,255,.88));
+  box-shadow:0 24px 70px rgba(13,24,65,.09);
+  position:relative;
+  overflow:hidden;
+}
+body:has(.pricing-table-card) .intro:before{
+  content:"";
+  position:absolute;
+  width:300px;height:300px;
+  right:-120px;top:-140px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(24,52,168,.13),transparent 68%);
+  pointer-events:none;
+}
+body:has(.pricing-table-card) .intro h1{
+  font-size:clamp(34px,4.4vw,58px);
+  max-width:720px;
+  margin-bottom:18px;
+}
+body:has(.pricing-table-card) .tools{
+  position:relative;
+  z-index:2;
+  align-items:center;
+  justify-content:flex-end;
+}
+body:has(.pricing-table-card) .search,
+body:has(.pricing-table-card) .select{
+  height:52px;
+  border-radius:17px;
+  border:1px solid rgba(24,52,168,.13);
+  box-shadow:0 12px 26px rgba(16,29,70,.06);
+  background:#fff;
+}
+body:has(.pricing-table-card) .search:focus,
+body:has(.pricing-table-card) .select:focus{
+  border-color:rgba(24,52,168,.38);
+  box-shadow:0 0 0 4px rgba(24,52,168,.10),0 12px 26px rgba(16,29,70,.06);
+}
+.result-status{
+  width:100%;
+  text-align:right;
+  font-size:12px;
+  font-weight:900;
+  color:#6c7282;
+  min-height:14px;
+  padding-right:4px;
+}
+.price-overview{
+  display:grid;
+  grid-template-columns:1.15fr 1fr 1fr;
+  gap:16px;
+  margin:0 0 40px;
+}
+.price-overview-card{
+  border:1px solid rgba(24,52,168,.10);
+  border-radius:24px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 18px 44px rgba(13,24,65,.07);
+  padding:22px;
+}
+.price-overview-card.primary{
+  background:linear-gradient(135deg,#1834a8,#0b1646);
+  color:#fff;
+  border-color:rgba(255,255,255,.18);
+}
+.price-overview-card span{
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-size:10px;
+  font-weight:900;
+  color:#7d8495;
+  margin-bottom:9px;
+}
+.price-overview-card.primary span{color:rgba(255,255,255,.62)}
+.price-overview-card strong{
+  display:block;
+  font-size:21px;
+  font-weight:950;
+  letter-spacing:-.5px;
+  margin-bottom:7px;
+}
+.price-overview-card p{
+  margin:0;
+  font-size:13px;
+  line-height:1.45;
+  color:#747b8d;
+}
+.price-overview-card.primary p{color:rgba(255,255,255,.68)}
+.period-title,
+.section-label h2{
+  letter-spacing:-.95px;
+}
+.pricing-table-card{
+  border:1px solid rgba(24,52,168,.10);
+  border-radius:28px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 22px 68px rgba(13,24,65,.09);
+  overflow:hidden;
+}
+.table-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:20px 22px 14px;
+  background:linear-gradient(180deg,rgba(248,250,255,.98),rgba(255,255,255,.82));
+  border-bottom:1px solid rgba(24,52,168,.08);
+}
+.table-meta span{
+  font-size:15px;
+  font-weight:950;
+  color:#10131d;
+}
+.table-meta small{
+  font-size:12px;
+  font-weight:800;
+  color:#8a8f9f;
+}
+.pricing-table-card .table-wrap{
+  padding:0 0 8px;
+  overflow:auto;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(24,52,168,.35) rgba(24,52,168,.07);
+}
+.pricing-table{
+  min-width:1160px;
+  border-collapse:separate;
+  border-spacing:0;
+}
+.pricing-table thead th{
+  position:sticky;
+  top:0;
+  z-index:4;
+  background:linear-gradient(180deg,#1733a6,#122983);
+  padding:17px 18px;
+  font-size:13px;
+  letter-spacing:.01em;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.08);
+}
+.pricing-table thead th:first-child,
+.pricing-table thead th:last-child{
+  border-radius:0;
+}
+.pricing-table th:nth-child(1),
+.pricing-table td:nth-child(1){
+  position:sticky;
+  left:0;
+  z-index:3;
+  width:132px;
+  min-width:132px;
+  max-width:132px;
+}
+.pricing-table th:nth-child(2),
+.pricing-table td:nth-child(2){
+  position:sticky;
+  left:132px;
+  z-index:3;
+  width:270px;
+  min-width:270px;
+  max-width:270px;
+  box-shadow:12px 0 22px rgba(13,24,65,.05);
+}
+.pricing-table th:last-child,
+.pricing-table td:last-child{
+  position:sticky;
+  right:0;
+  z-index:3;
+  width:156px;
+  min-width:156px;
+  max-width:156px;
+  box-shadow:-12px 0 22px rgba(13,24,65,.07);
+}
+.pricing-table thead th:nth-child(1),
+.pricing-table thead th:nth-child(2),
+.pricing-table thead th:last-child{
+  z-index:5;
+}
+.pricing-table tbody td{
+  background:#fff;
+  border-bottom:1px solid rgba(24,52,168,.075);
+  padding:18px;
+  color:#252936;
+  transition:background .18s,color .18s,box-shadow .18s;
+}
+.pricing-table tbody tr:hover td{
+  background:#f5f7ff;
+}
+.pricing-table tbody td:first-child{
+  font-size:0;
+}
+.pricing-table tbody td:first-child::before{
+  content:attr(data-group-label);
+}
+.pricing-table tbody td:first-child:not([data-group-label])::before{
+  content:attr(data-label);
+}
+.pricing-table tbody td:first-child{
+  color:transparent;
+}
+.pricing-table tbody tr[data-group] td:first-child:after{
+  content:attr(data-group);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:86px;
+  height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:950;
+  color:#1834a8;
+  background:rgba(24,52,168,.09);
+  border:1px solid rgba(24,52,168,.13);
+}
+.pricing-table tbody tr[data-group="Grupa SUV"] td:first-child:after{
+  color:#0f6b83;background:rgba(48,194,224,.11);border-color:rgba(48,194,224,.20);
+}
+.pricing-table tbody tr[data-group="Grupa VAN"] td:first-child:after{
+  color:#775800;background:rgba(229,192,112,.19);border-color:rgba(229,192,112,.34);
+}
+.pricing-table tbody td:nth-child(2){
+  font-weight:950;
+  color:#11131b;
+  white-space:normal;
+  line-height:1.15;
+}
+.pricing-table tbody td:nth-child(n+3):not(:last-child){
+  font-weight:850;
+  text-align:center;
+  color:#384052;
+}
+.pricing-table tbody td:nth-child(3){
+  color:#1834a8;
+  font-weight:950;
+}
+.price-reserve-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:100%;
+  min-height:40px;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:950;
+  color:#fff;
+  background:linear-gradient(135deg,#1834a8,#0b1646);
+  box-shadow:0 12px 22px rgba(24,52,168,.18);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.price-reserve-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 17px 30px rgba(24,52,168,.26);
+}
+.note-grid .note{
+  background:rgba(255,255,255,.78);
+  border-color:rgba(24,52,168,.10);
+  box-shadow:0 18px 44px rgba(13,24,65,.065);
+}
+@media(max-width:980px){
+  body:has(.pricing-table-card) .intro{
+    padding:26px;
+  }
+  .price-overview{grid-template-columns:1fr;}
+  .table-meta{align-items:flex-start;flex-direction:column;gap:4px;}
+}
+@media(max-width:760px){
+  body:has(.pricing-table-card) main{padding-top:34px;}
+  body:has(.pricing-table-card) .intro{
+    border-radius:26px;
+    margin-bottom:22px;
+  }
+  body:has(.pricing-table-card) .tools{
+    justify-content:stretch;
+  }
+  .result-status{text-align:left;}
+  .price-overview-card{border-radius:20px;padding:18px;}
+  .pricing-table-card{
+    box-shadow:none;
+    border:0;
+    background:transparent;
+    overflow:visible;
+    margin-bottom:26px;
+  }
+  .table-meta{
+    border:1px solid rgba(24,52,168,.10);
+    border-radius:22px;
+    margin-bottom:12px;
+    padding:16px 18px;
+    box-shadow:0 16px 34px rgba(13,24,65,.06);
+  }
+  .pricing-table-card .table-wrap{
+    overflow:visible;
+    padding:0;
+  }
+  .pricing-table,
+  .pricing-table thead,
+  .pricing-table tbody,
+  .pricing-table tr,
+  .pricing-table th,
+  .pricing-table td{
+    display:block;
+    width:100%;
+    min-width:0;
+    max-width:none;
+  }
+  .pricing-table{border-spacing:0;}
+  .pricing-table thead{display:none;}
+  .pricing-table tbody{
+    display:grid;
+    gap:14px;
+  }
+  .pricing-table tbody tr{
+    display:grid;
+    grid-template-columns:1fr;
+    border:1px solid rgba(24,52,168,.10);
+    border-radius:24px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 18px 42px rgba(13,24,65,.075);
+  }
+  .pricing-table th:nth-child(1),
+  .pricing-table td:nth-child(1),
+  .pricing-table th:nth-child(2),
+  .pricing-table td:nth-child(2),
+  .pricing-table th:last-child,
+  .pricing-table td:last-child{
+    position:static;
+    left:auto;right:auto;
+    width:auto;min-width:0;max-width:none;
+    box-shadow:none;
+  }
+  .pricing-table tbody td{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding:12px 16px;
+    border-bottom:1px solid rgba(24,52,168,.07);
+    text-align:right!important;
+    white-space:normal;
+  }
+  .pricing-table tbody tr:hover td{background:#fff;}
+  .pricing-table tbody td:before{
+    content:"";
+    flex:0 0 auto;
+    font-size:11px;
+    font-weight:950;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:#80889a;
+    text-align:left;
+  }
+  .pricing-table tbody td:nth-child(1){
+    justify-content:flex-start;
+    background:linear-gradient(180deg,#f7f9ff,#fff);
+    padding-top:16px;
+    color:transparent;
+  }
+  .pricing-table tbody td:nth-child(1):before{display:none;}
+  .pricing-table tbody td:nth-child(2){
+    display:block;
+    padding:4px 16px 16px;
+    font-size:20px;
+    text-align:left!important;
+    border-bottom:1px solid rgba(24,52,168,.10);
+    background:linear-gradient(180deg,#fff,#fbfcff);
+  }
+  .pricing-table tbody td:nth-child(2):before{
+    content:"Vozilo";
+    display:block;
+    margin-bottom:7px;
+  }
+  .pricing-table tbody td:nth-child(3):before{content:"1 dan";}
+  .pricing-table tbody td:nth-child(4):before{content:"2–3 dana";}
+  .pricing-table tbody td:nth-child(5):before{content:"4–6 dana";}
+  .pricing-table tbody td:nth-child(6):before{content:"7–10 dana";}
+  .pricing-table tbody td:nth-child(7):before{content:"11–15 dana";}
+  .pricing-table tbody td:nth-child(8):before{content:"16+ dana";}
+  .pricing-table tbody td:last-child{
+    padding:16px;
+    border-bottom:0;
+    background:#f6f8ff;
+  }
+  .pricing-table tbody td:last-child:before{display:none;}
+  .price-reserve-link{
+    min-height:48px;
+    border-radius:14px;
+    font-size:15px;
+  }
+}

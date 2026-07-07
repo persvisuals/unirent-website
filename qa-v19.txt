@@ -1,0 +1,1 @@
+v19: Replaced placeholder car illustrations with photorealistic car images across fleet cards and site hero/feature assets.

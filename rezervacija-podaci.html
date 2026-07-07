@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Nastavak UniRent rezervacije nakon izbora vozila: podaci vozača, dodatne opcije i pregled upita." name="description"/>
+<title>Nastavak rezervacije | UniRent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="css/unirent.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v7.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v14.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v18.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v17.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v16.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v13.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v10.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v8.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v20.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v22.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v23.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v24.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v25.css" rel="stylesheet"/>
+<link href="css/pages/rezervacija-podaci.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v27.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body class="reservation-next-v25">
+<header class="checkout-hero-v25">
+  <div class="container"><div data-active="rezervacija" data-unirent-nav=""></div></div>
+  <div class="container checkout-hero-grid-v25">
+    <div class="checkout-copy-v25 reveal">
+      <span class="checkout-kicker-v25">Nastavak rezervacije</span>
+      <h1>Potvrdite vozilo i unesite podatke.</h1>
+      <p>Nastavite sa podacima vozača, detaljima preuzimanja i dodatnim opcijama.</p>
+      <div class="checkout-steps-v25" aria-label="Koraci rezervacije">
+        <span class="done">1 <b>Detalji</b></span>
+        <span class="done">2 <b>Vozilo</b></span>
+        <span class="active">3 <b>Podaci</b></span>
+        <span>4 <b>Upit</b></span>
+      </div>
+    </div>
+    <aside class="selected-car-hero-v25 reveal" aria-live="polite">
+      <div class="selected-car-top-v25"><span id="vehicleGroupHero">Grupa vozila</span><strong id="vehiclePriceHero">od — / dan</strong></div>
+      <img alt="Izabrano UniRent vozilo" id="vehicleHeroImage" src="assets/cars/hero/reservation-hero-car.png"/>
+      <h2 id="vehicleNameHero">Izabrano vozilo</h2>
+      <p id="vehicleMetaHero">Automatik • 5 vrata • Jasni uslovi najma</p>
+    </aside>
+  </div>
+</header>
+
+<main class="checkout-main-v25">
+  <div class="container checkout-layout-v25">
+    <section class="checkout-form-card-v25 reveal" aria-label="Podaci za rezervaciju">
+      <div class="checkout-section-head-v25">
+        <span>Korak 3</span>
+        <div><h2>Podaci za rezervaciju</h2><p>Forma je spremna kao UI prototip. Sledeći tehnički korak je povezivanje sa email servisom, CRM-om ili backend endpointom.</p></div>
+      </div>
+      <form id="reservationNextForm" class="reservation-next-form-v25">
+        <fieldset>
+          <legend>Vozač i kontakt</legend>
+          <div class="form-grid-v25">
+            <label><span>Ime i prezime</span><input id="driverName" name="driverName" placeholder="Unesite ime i prezime" required type="text"/></label>
+            <label><span>Email</span><input id="driverEmail" name="driverEmail" placeholder="email@example.com" required type="email"/></label>
+            <label><span>Telefon</span><input id="driverPhone" name="driverPhone" placeholder="+381 ..." required type="tel"/></label>
+            <label><span>Broj leta / dolazak</span><input id="flightNumber" name="flightNumber" placeholder="Opcionalno" type="text"/></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalji najma</legend>
+          <div class="form-grid-v25">
+            <label><span>Lokacija preuzimanja</span><select id="checkoutPickup" name="pickup"><option>Aerodrom Nikola Tesla</option><option>Centar Beograda</option><option>Dostava do hotela</option></select></label>
+            <label><span>Lokacija vraćanja</span><select id="checkoutReturnLocation" name="returnLocation"><option>Ista lokacija</option><option>Aerodrom Nikola Tesla</option><option>Centar Beograda</option><option>Dostava / druga adresa</option></select></label>
+            <label><span>Datum preuzimanja</span><input id="checkoutPickupDate" name="pickupDate" type="date" value="2026-01-19"/></label>
+            <label><span>Vreme preuzimanja</span><input id="checkoutPickupTime" name="pickupTime" type="time" value="09:00"/></label>
+            <label><span>Datum vraćanja</span><input id="checkoutReturnDate" name="returnDate" type="date" value="2026-01-23"/></label>
+            <label><span>Vreme vraćanja</span><input id="checkoutReturnTime" name="returnTime" type="time" value="12:00"/></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dodatne opcije</legend>
+          <div class="extras-grid-v25">
+            <label class="extra-card-v25"><input type="checkbox" data-extra="5" value="Dodatni vozač"/><span><b>Dodatni vozač</b><em>+5 € / dan</em></span></label>
+            <label class="extra-card-v25"><input type="checkbox" data-extra="4" value="Dečije sedište"/><span><b>Dečije sedište</b><em>+4 € / dan</em></span></label>
+            <label class="extra-card-v25"><input type="checkbox" data-extra="8" value="GPS / navigacija"/><span><b>GPS / navigacija</b><em>+8 € / dan</em></span></label>
+            <label class="extra-card-v25"><input type="checkbox" data-extra="12" value="Cross-border dozvola"/><span><b>Cross-border dozvola</b><em>+12 € / dan</em></span></label>
+            <label class="extra-card-v25 wide"><input type="checkbox" data-extra="15" value="Premium zaštita"/><span><b>Premium zaštita</b><em>Smanjena odgovornost, stakla/točkovi i dodatna sigurnost • +15 € / dan</em></span></label>
+          </div>
+        </fieldset>
+
+        <label class="note-field-v25"><span>Napomena</span><textarea id="checkoutNote" rows="4" placeholder="Adresa hotela, poseban zahtev, vreme dolaska, dodatna pitanja..."></textarea></label>
+        <button class="checkout-submit-v25" type="submit">Pošaljite zahtev za rezervaciju →</button>
+        <p class="checkout-status-v25" id="checkoutStatus" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <aside class="checkout-summary-v25 reveal" aria-label="Pregled rezervacije">
+      <div class="summary-card-v25 selected-v25">
+        <span class="summary-label-v25">Izabrano vozilo</span>
+        <h3 id="summaryVehicleName">—</h3>
+        <p id="summaryVehicleGroup">—</p>
+        <img alt="Izabrano vozilo" id="summaryVehicleImage" src="assets/cars/hero/reservation-hero-car.png"/>
+      </div>
+      <div class="summary-card-v25">
+        <span class="summary-label-v25">Pregled najma</span>
+        <dl class="summary-list-v25">
+          <div><dt>Preuzimanje</dt><dd id="sumPickup">Aerodrom Nikola Tesla</dd></div>
+          <div><dt>Period</dt><dd id="sumPeriod">19.01.2026. – 23.01.2026.</dd></div>
+          <div><dt>Vreme</dt><dd id="sumTime">09:00 – 12:00</dd></div>
+          <div><dt>Dana</dt><dd id="sumDays">4</dd></div>
+        </dl>
+      </div>
+      <div class="summary-card-v25 total-v25">
+        <span class="summary-label-v25">Procena cene</span>
+        <div class="total-row-v25"><span>Vozilo</span><strong id="sumBase">—</strong></div>
+        <div class="total-row-v25"><span>Dodatne opcije</span><strong id="sumExtras">0 €</strong></div>
+        <div class="total-line-v25"></div>
+        <div class="grand-total-v25"><span>Ukupno za pregled</span><strong id="sumTotal">—</strong></div>
+        <p>Finalna cena se potvrđuje nakon provere dostupnosti, dodatnih opcija i uslova preuzimanja.</p>
+      </div>
+      <div class="summary-card-v25 checklist-v25">
+        <span class="summary-label-v25">Za preuzimanje</span>
+        <ul><li>Lična karta ili pasoš</li><li>Važeća vozačka dozvola</li><li>Kartica / depozit prema klasi vozila</li></ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section class="conversion-strip checkout-bottom-v25"><div class="container conversion-grid"><div><h2>Niste sigurni u izbor?</h2><p>Korisnik u svakom trenutku može da se vrati na izbor vozila ili da proveri cene u cenovniku.</p></div><div class="cta-row"><a class="cta-primary" href="rezervacija-vozila.html">Promenite vozilo →</a><a class="cta-secondary" href="cenovnik.html">Pogledajte cenovnik</a></div></div></section>
+<div data-unirent-footer=""></div>
+<script defer src="js/unirent.js"></script>
+<script defer src="js/pages/rezervacija-podaci.js"></script>
+<script defer src="js/unirent-v14.js"></script>
+</body>
+</html>

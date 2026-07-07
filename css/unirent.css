@@ -1,0 +1,474 @@
+/* UniRent shared stylesheet (v6)
+   Consolidated from previous v1-v5 cleanup layers so pages only load one shared CSS file. */
+
+
+/* === unirent-fixes.css === */
+
+/* UniRent v1 cleanup layer: mobile nav, accessibility, production placeholders, consistency polish */
+:root{--brand-blue:#1834a8;--brand-blue-2:#203bb6;--brand-deep:#070b1c;--brand-line:#dfe2eb;--brand-text:#11131b;--brand-radius:14px}
+html{scroll-behavior:smooth}
+button,a,input,select{font-family:'Inter Tight',Arial,sans-serif}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(255,255,255,.92);outline-offset:3px}
+main a:focus-visible,.content a:focus-visible,.fleet-section a:focus-visible{outline-color:var(--brand-blue)}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.logo{letter-spacing:-.9px}.logo::first-letter{letter-spacing:-1.4px}
+.navlinks a[aria-current="page"],.navlinks a.active{color:#fff!important;font-weight:900!important}
+.menu{display:none;min-width:62px;text-align:center;cursor:pointer;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:10px;padding:10px 12px;font-weight:800}
+@media(max-width:1000px){
+  .menu{display:block!important}
+  .nav{position:relative}.navlinks{position:absolute!important;left:0;right:0;top:calc(100% + 10px);display:none!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important;padding:14px!important;background:rgba(7,11,28,.98)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.32)!important;z-index:999!important;backdrop-filter:blur(14px)}
+  .navlinks.is-open{display:flex!important}.navlinks a{font-size:15px!important;padding:13px 14px!important;border-radius:12px!important;color:rgba(255,255,255,.78)!important}.navlinks a:hover,.navlinks a.active{background:rgba(255,255,255,.08);color:#fff!important}
+}
+.placeholder,.slot{border-style:solid!important;border-color:rgba(255,255,255,.22)!important;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04))!important;text-transform:none!important;letter-spacing:0!important}.placeholder span,.slot{font-size:0!important}.placeholder span::after{content:'Vizual u pripremi';font-size:12px;line-height:1.2;font-weight:800;letter-spacing:.02em}.fleet-placeholder span::after,.slot::after{content:'Slika vozila';font-size:12px;line-height:1.2;font-weight:800}.blog-placeholder span::after{content:'Blog vizual';font-size:12px;line-height:1.2;font-weight:800}.hero-placeholder span::after,.hero-ph span::after,.why-placeholder span::after{content:'UniRent vozilo';font-size:13px;line-height:1.2;font-weight:800}
+.footer[id="kontakt"]{scroll-margin-top:90px}.footer p{max-width:470px}.copy,.copyright{letter-spacing:.01em}.foot-links a:hover{color:#fff!important}
+.price{letter-spacing:-.3px}.more,.card-btn,.btn,.reserve-hero{font-weight:800!important}.more:hover,.card-btn:hover,.btn:hover,.reserve-hero:hover{box-shadow:0 10px 26px rgba(24,52,168,.25)}
+.table-wrap{scrollbar-width:thin}.table-wrap::after{content:'Skrolujte tabelu horizontalno za sve cene';display:none;font-size:12px;color:#777;margin-top:8px}@media(max-width:720px){.table-wrap::after{display:block}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+
+/* === unirent-v2.css === */
+
+/* UniRent v2 visual/client-readiness layer: premium hierarchy, consistent cards/forms, improved responsive polish */
+:root{
+  --ur-blue:#1834a8;
+  --ur-blue-2:#2347d5;
+  --ur-ink:#060918;
+  --ur-surface:#f5f6fa;
+  --ur-card:#ffffff;
+  --ur-line:rgba(12,20,44,.10);
+  --ur-muted:#717582;
+  --ur-radius:24px;
+  --ur-shadow:0 22px 70px rgba(8,13,35,.13);
+  --ur-shadow-soft:0 12px 36px rgba(8,13,35,.08);
+}
+body{background:var(--ur-surface)!important;color:#11131b!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.container{width:min(100% - 72px,1180px)!important}
+.logo{font-size:clamp(24px,2vw,30px)!important;position:relative;display:inline-flex;align-items:baseline;gap:9px}.logo::after{content:'rent-a-car';font-size:10px;font-style:normal;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.50)}
+.nav,.topbar .nav{height:78px!important}.navlinks{gap:10px!important;align-items:center}.navlinks a{font-size:12px!important;font-weight:800!important;padding:10px 12px!important;border-radius:999px;color:rgba(255,255,255,.70)!important}.navlinks a:hover,.navlinks a.active,.navlinks a[aria-current="page"]{background:rgba(255,255,255,.10)!important;color:#fff!important}.menu{border-radius:999px!important;padding:11px 16px!important;background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.18)!important}
+.hero,.hero-sub{background:radial-gradient(circle at 64% 32%,rgba(88,126,255,.42),transparent 26%),radial-gradient(circle at 12% 12%,rgba(255,255,255,.10),transparent 22%),linear-gradient(180deg,#1939ba 0%,#07164b 58%,#030714 100%)!important}.hero::before,.hero-sub::before{opacity:.85}.hero::after,.hero-sub::after{pointer-events:none}
+/* Homepage booking */
+.booking{border-radius:28px!important;box-shadow:var(--ur-shadow)!important;border:1px solid rgba(255,255,255,.70)!important;background:linear-gradient(180deg,#fff,#f7f8fc)!important;position:relative;overflow:hidden!important}.booking::before{content:'';position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--ur-blue),#5f7cff);pointer-events:none}.tabs{background:#eef0f6;border-radius:999px;padding:5px;width:max-content}.tab{height:42px;padding:0 22px!important;border-radius:999px!important;background:transparent!important;color:#596070!important}.tab.active{background:#fff!important;color:var(--ur-blue)!important;box-shadow:0 8px 24px rgba(8,13,35,.10)!important}.field-wrap label,.corp,.field label{color:#111827!important;font-size:11px!important;letter-spacing:.06em;text-transform:uppercase}.field,.fake-input{border-radius:14px!important;border:1px solid var(--ur-line)!important;background:#fff!important;box-shadow:0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.5)!important}.field:hover,.fake-input:hover{border-color:rgba(24,52,168,.32)!important}.field input,.field select,.fake-input input,.fake-input select{font-weight:800!important}.return-loc{color:var(--ur-blue)!important;font-weight:800}.btn,.reserve-hero,.more,.card-btn{border-radius:12px!important;background:linear-gradient(180deg,var(--ur-blue-2),var(--ur-blue))!important;box-shadow:0 14px 30px rgba(24,52,168,.20)!important}.btn:hover,.reserve-hero:hover,.more:hover,.card-btn:hover{transform:translateY(-2px)!important;box-shadow:0 18px 38px rgba(24,52,168,.28)!important}
+.hero-stage{height:450px!important}.hero-image{height:340px!important;bottom:-4px!important}.hero-image img,.hero-car img,.hero-car,.hero-car-slot img,.feature-image img{filter:drop-shadow(0 38px 34px rgba(0,0,0,.32))!important}.hero-badge{border-radius:22px!important;background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.18)!important;box-shadow:0 18px 48px rgba(0,0,0,.18)!important}.hero-badge h3{font-size:22px!important}.hero-badge p{line-height:1.45}.hero-badge .icon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.14);font-size:22px!important;margin-bottom:18px!important}
+.section,.blog,.fleet,.fleet-section,.content{padding-top:82px!important;padding-bottom:86px!important}.title{max-width:780px;margin-inline:auto!important}.title h2,.section-head h2{font-size:clamp(31px,3.4vw,46px)!important;letter-spacing:-1.4px!important}.title p,.section-head p{line-height:1.55;color:var(--ur-muted)!important}
+.why-wrap{min-height:430px!important}.why-grid{gap:22px!important}.info-card{border-radius:var(--ur-radius)!important;background:linear-gradient(145deg,#2044cc 0%,#0a1230 95%)!important;padding:32px!important;box-shadow:var(--ur-shadow-soft)!important;position:relative;overflow:hidden}.info-card::after{content:'';position:absolute;right:-70px;top:-70px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}.info-card .mini-icon{width:48px;height:48px;border-radius:16px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin-bottom:22px!important}.info-card p,.info-card li{font-size:15px!important;line-height:1.55!important}.feature-image{right:-24px!important;width:47%!important;height:330px!important}
+/* Fleet and blog cards */
+.fleet,.fleet-section{background:linear-gradient(180deg,#f7f8fb 0%,#edf0f6 100%)!important}.filters,.toolbar{margin-bottom:36px!important}.filter-select,.filter,.pill-select select,.select,.search{height:46px!important;border:1px solid var(--ur-line)!important;border-radius:999px!important;background:#fff!important;box-shadow:0 8px 24px rgba(8,13,35,.05)!important}.switch,.toggle{height:46px!important;border:1px solid var(--ur-line)!important;box-shadow:0 8px 24px rgba(8,13,35,.05)!important;font-weight:900!important}.fleet-grid,.blog-grid,.cards{gap:26px!important}.car-card,.card{border-radius:26px!important;padding:24px!important;min-height:420px!important;background:radial-gradient(circle at 70% 18%,rgba(92,124,255,.26),transparent 28%),linear-gradient(150deg,#1839bd 0%,#071022 74%)!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 18px 48px rgba(7,12,35,.16)!important}.car-card h3,.card h3,.car-title{font-size:18px!important;letter-spacing:-.2px}.car-card small,.class,.car-class{color:rgba(255,255,255,.64)!important}.tag{background:rgba(255,255,255,.13)!important;border:1px solid rgba(255,255,255,.10)!important;color:rgba(255,255,255,.82)!important}.car-pic,.car-img-zone{height:180px!important;margin:16px 0 18px!important;border-radius:22px!important;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}.fleet-image{height:178px!important}.price,.price strong{font-size:32px!important;letter-spacing:-.8px}.blog-card{border-radius:26px!important;background:#fff!important;color:#111827!important;box-shadow:var(--ur-shadow-soft)!important;border:1px solid var(--ur-line)!important;overflow:hidden!important}.blog-body{padding:24px!important}.blog-body h3{font-size:24px!important;color:#111827!important;letter-spacing:-.6px}.blog-body p{color:var(--ur-muted)!important;line-height:1.55!important}.blog-card .more{width:auto!important;min-width:142px!important;color:#fff!important}.blog-image{height:205px!important}
+/* Subpages */
+.topbar{background:linear-gradient(180deg,#1834a8,#0d2378)!important;box-shadow:0 1px 0 rgba(255,255,255,.08) inset}.hero-content,.hero-copy{position:relative;z-index:3}.hero h1,.hero-copy h1{font-size:clamp(40px,4.6vw,64px)!important;letter-spacing:-2px!important}.hero p,.hero-copy p{font-size:clamp(20px,2.2vw,29px)!important;line-height:1.22!important}.reservation-box{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:18px;backdrop-filter:blur(16px)}.reservation-box .field label{color:#fff!important}.reservation-box .fake-input{background:rgba(255,255,255,.09)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}.reservation-box input,.reservation-box select{color:#fff!important}.reservation-box option{color:#111!important}.selected-panel{border-radius:24px!important;box-shadow:0 22px 80px rgba(7,12,35,.18)!important}.section-head{max-width:720px;margin-inline:auto!important}.hero-car-wrap{right:-40px!important}
+.content{background:#fff}.terms section{background:#fff;border:1px solid var(--ur-line);border-radius:24px;padding:28px 30px!important;box-shadow:var(--ur-shadow-soft);margin-bottom:22px!important}.terms h2,.terms h3{letter-spacing:-.5px!important}.terms li,.terms p{line-height:1.62!important;color:#69707f!important}.terms ul{padding-left:20px!important}.terms li+li{margin-top:8px}.hero-sub .hero-car{right:0!important}
+main{background:#fff}.intro{background:linear-gradient(180deg,#fff,#f8f9fc);border:1px solid var(--ur-line);border-radius:28px;padding:30px!important;box-shadow:var(--ur-shadow-soft);align-items:center!important}.intro h1{font-size:clamp(32px,3.6vw,50px)!important}.date-pill{box-shadow:0 14px 32px rgba(24,52,168,.20)!important}.period-title{font-size:28px!important;margin-top:12px}.table-card{border-radius:26px!important;box-shadow:var(--ur-shadow-soft);border:1px solid var(--ur-line);padding:10px;background:#fff!important}.table-wrap{border-radius:20px;overflow:auto!important}thead th{background:#1733a6!important;padding-top:18px!important;padding-bottom:18px!important}thead th:first-child{border-radius:16px 0 0 16px!important}thead th:last-child{border-radius:0 16px 16px 0!important}tbody td{font-size:14px!important}.note{border-radius:22px!important;background:#fff!important;box-shadow:var(--ur-shadow-soft)!important;border:1px solid var(--ur-line)!important}.note strong{font-size:17px!important}.note p{color:#687080!important}
+.footer{background:radial-gradient(circle at 15% 0,rgba(35,71,213,.24),transparent 28%),linear-gradient(180deg,#080d22,#040612)!important}.footer-grid{gap:110px!important}.footer h3{font-size:30px!important}.footer p{font-size:14px!important;line-height:1.65!important}.foot-links a{font-weight:700}.watermark{opacity:.9}
+@media(max-width:1000px){.container{width:min(100% - 36px,1180px)!important}.logo::after{display:none}.navlinks{top:calc(100% + 8px)!important}.booking{margin-top:0!important}.hero-stage{height:330px!important}.hero-image{height:260px!important}.feature-image{width:100%!important;right:auto!important}.why-wrap{min-height:auto!important}.reservation-box{grid-template-columns:1fr!important}.hero-car-wrap{right:50%!important}.intro{display:block!important}.tools{margin-top:22px!important}}
+@media(max-width:640px){.container{width:min(100% - 28px,1180px)!important}.section,.blog,.fleet,.fleet-section,.content{padding-top:54px!important;padding-bottom:58px!important}.booking{border-radius:22px!important;padding:22px 18px!important}.tabs{width:100%;display:grid;grid-template-columns:1fr 1fr}.tab{width:100%;padding:0 12px!important}.hero-stage{height:300px!important}.hero-image{width:100%!important;height:230px!important}.car-card,.card{min-height:390px!important;padding:20px!important}.blog-image{height:178px!important}.intro{padding:22px!important}.terms section{padding:22px!important}.footer-grid,.foot-links{grid-template-columns:1fr!important;gap:28px!important}.watermark{font-size:24vw!important}}
+
+
+/* === unirent-v3.css === */
+
+/* --- UniRent v3: reservation form + price-list booking pass --- */
+:root{--ur-blue:#1834a8;--ur-blue-2:#2848d8;--ur-deep:#060b1c;--ur-line:#e1e4ec}
+
+/* Reservation page: keep fields glassy on dark hero, not solid white */
+body .hero .reservation-box,
+body .reservation-box{
+  background:rgba(255,255,255,.085)!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.10)!important;
+}
+body .hero .reservation-box .field label,
+body .reservation-box .field label{
+  color:rgba(255,255,255,.86)!important;
+  text-shadow:0 1px 0 rgba(0,0,0,.10)!important;
+}
+body .hero .reservation-box .fake-input,
+body .reservation-box .fake-input{
+  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.32)!important;
+  color:#fff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 26px rgba(0,0,0,.10)!important;
+  backdrop-filter:blur(10px)!important;
+}
+body .hero .reservation-box .fake-input:hover,
+body .reservation-box .fake-input:hover,
+body .hero .reservation-box .fake-input:focus-within,
+body .reservation-box .fake-input:focus-within{
+  background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.075))!important;
+  border-color:rgba(255,255,255,.58)!important;
+}
+body .hero .reservation-box .fake-input svg,
+body .reservation-box .fake-input svg{
+  color:rgba(255,255,255,.82)!important;
+  opacity:1!important;
+}
+body .hero .reservation-box .fake-input input,
+body .hero .reservation-box .fake-input select,
+body .reservation-box .fake-input input,
+body .reservation-box .fake-input select{
+  background:transparent!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  color-scheme:dark!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body .reservation-box .fake-input input::placeholder{color:rgba(255,255,255,.62)!important;-webkit-text-fill-color:rgba(255,255,255,.62)!important}
+body .reservation-box .fake-input input::-webkit-datetime-edit,
+body .reservation-box .fake-input input::-webkit-datetime-edit-fields-wrapper,
+body .reservation-box .fake-input input::-webkit-datetime-edit-text,
+body .reservation-box .fake-input input::-webkit-datetime-edit-month-field,
+body .reservation-box .fake-input input::-webkit-datetime-edit-day-field,
+body .reservation-box .fake-input input::-webkit-datetime-edit-year-field,
+body .reservation-box .fake-input input::-webkit-datetime-edit-hour-field,
+body .reservation-box .fake-input input::-webkit-datetime-edit-minute-field,
+body .reservation-box .fake-input input::-webkit-datetime-edit-ampm-field{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+body .reservation-box .fake-input select option{color:#111827!important;background:#fff!important;-webkit-text-fill-color:#111827!important}
+
+/* Price list reservation buttons */
+.price-action-head,
+.price-action-cell{width:150px;text-align:right!important;white-space:nowrap!important}
+.price-reserve-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:38px;
+  padding:0 16px;
+  border-radius:999px;
+  background:linear-gradient(180deg,var(--ur-blue-2),var(--ur-blue));
+  color:#fff!important;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:-.01em;
+  box-shadow:0 12px 24px rgba(24,52,168,.20);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.price-reserve-link:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(24,52,168,.28)}
+.price-reserve-link:focus-visible{outline:3px solid rgba(24,52,168,.22);outline-offset:3px}
+#priceTable,#priceTable2{min-width:1040px!important}
+#priceTable th:nth-last-child(2),#priceTable td:nth-last-child(2),
+#priceTable2 th:nth-last-child(2),#priceTable2 td:nth-last-child(2){text-align:right!important}
+#priceTable td:nth-child(2),#priceTable2 td:nth-child(2){min-width:250px}
+
+/* Make selected reservation feedback feel like a deliberate booking step */
+.selected-panel.from-price-list{
+  border-color:rgba(24,52,168,.20)!important;
+  box-shadow:0 24px 80px rgba(24,52,168,.20)!important;
+}
+.selected-panel.from-price-list strong::before{content:'✓ ';color:var(--ur-blue)}
+
+@media(max-width:640px){
+  body .reservation-box{padding:14px!important;border-radius:20px!important}
+  .price-action-head,.price-action-cell{width:132px}
+  .price-reserve-link{min-height:36px;padding:0 14px;font-size:12px}
+}
+
+
+/* === unirent-v4.css === */
+
+/* --- UniRent v4: reservation form legibility fix --- */
+/* The reservation hero intentionally uses a dark/glass form treatment so labels,
+   icons and input values remain readable on the blue gradient background. */
+body .hero .reservation-box{
+  background:linear-gradient(180deg,rgba(12,22,64,.58),rgba(5,10,32,.42))!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.12)!important;
+  backdrop-filter:blur(18px)!important;
+}
+body .hero .reservation-box .field{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+body .hero .reservation-box .field label{
+  position:relative!important;
+  z-index:3!important;
+  margin:0!important;
+  color:rgba(255,255,255,.96)!important;
+  -webkit-text-fill-color:rgba(255,255,255,.96)!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.40)!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+  letter-spacing:.075em!important;
+  text-transform:uppercase!important;
+  padding-left:2px!important;
+}
+body .hero .reservation-box .fake-input{
+  height:60px!important;
+  border-radius:16px!important;
+  background:linear-gradient(180deg,rgba(8,17,55,.88),rgba(4,9,31,.76))!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  color:#fff!important;
+  overflow:hidden!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 12px 28px rgba(0,0,0,.16)!important;
+}
+body .hero .reservation-box .fake-input:hover,
+body .hero .reservation-box .fake-input:focus-within{
+  background:linear-gradient(180deg,rgba(14,28,78,.94),rgba(7,14,41,.82))!important;
+  border-color:rgba(255,255,255,.56)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 16px 34px rgba(0,0,0,.20),0 0 0 4px rgba(255,255,255,.06)!important;
+}
+body .hero .reservation-box .fake-input svg{
+  color:rgba(255,255,255,.86)!important;
+  opacity:1!important;
+}
+body .hero .reservation-box .fake-input input,
+body .hero .reservation-box .fake-input select{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  caret-color:#fff!important;
+  opacity:1!important;
+  font-weight:800!important;
+  color-scheme:dark!important;
+}
+body .hero .reservation-box .fake-input input::placeholder{
+  color:rgba(255,255,255,.62)!important;
+  -webkit-text-fill-color:rgba(255,255,255,.62)!important;
+}
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-fields-wrapper,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-text,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-month-field,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-day-field,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-year-field,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-hour-field,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-minute-field,
+body .hero .reservation-box .fake-input input::-webkit-datetime-edit-ampm-field{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  opacity:1!important;
+}
+body .hero .reservation-box .fake-input select option{
+  color:#111827!important;
+  -webkit-text-fill-color:#111827!important;
+  background:#fff!important;
+}
+body .hero .reservation-box .fake-input input:-webkit-autofill,
+body .hero .reservation-box .fake-input input:-webkit-autofill:hover,
+body .hero .reservation-box .fake-input input:-webkit-autofill:focus{
+  -webkit-text-fill-color:#fff!important;
+  transition:background-color 9999s ease-out!important;
+  box-shadow:0 0 0 1000px rgba(8,17,55,.90) inset!important;
+}
+@media(max-width:640px){
+  body .hero .reservation-box .fake-input{height:58px!important;border-radius:15px!important}
+  body .hero .reservation-box .field label{font-size:10px!important}
+}
+
+
+/* === unirent-v5.css === */
+
+/* --- UniRent v5: brand/content/conversion pass --- */
+:root{
+  --ur-brand-blue:#1834a8;
+  --ur-brand-blue-2:#3153ee;
+  --ur-ink:#0d111c;
+  --ur-soft:#f5f7fb;
+  --ur-card:#ffffff;
+  --ur-border:#e2e6ef;
+  --ur-muted:#747887;
+  --ur-radius:24px;
+}
+
+/* A clearer rent-a-car conversion layer */
+.navlinks a[href="rezervacija-vozila.html"]{
+  color:#fff!important;
+  font-weight:900!important;
+  position:relative;
+}
+.navlinks a[href="rezervacija-vozila.html"]::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-8px;height:2px;
+  background:rgba(255,255,255,.72);
+  border-radius:99px;
+  transform:scaleX(.72);
+  transform-origin:center;
+}
+.logo::first-letter{letter-spacing:-.08em}
+
+.trust-band{
+  background:linear-gradient(180deg,#fff 0%,#f7f8fc 100%);
+  border-bottom:1px solid rgba(13,17,28,.06);
+  padding:22px 0;
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.trust-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  background:#fff;
+  border:1px solid var(--ur-border);
+  border-radius:18px;
+  padding:18px 18px;
+  box-shadow:0 12px 34px rgba(8,12,30,.05);
+}
+.trust-icon{
+  width:36px;height:36px;flex:0 0 36px;
+  border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(180deg,var(--ur-brand-blue-2),var(--ur-brand-blue));
+  color:#fff;font-weight:900;
+  box-shadow:0 10px 24px rgba(24,52,168,.24);
+}
+.trust-item strong{display:block;font-size:15px;line-height:1.1;margin-bottom:5px;color:var(--ur-ink)}
+.trust-item span{display:block;font-size:13px;line-height:1.35;color:var(--ur-muted);font-weight:650}
+
+.section-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(24,52,168,.08);
+  color:var(--ur-brand-blue);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.section-kicker::before{content:"";width:8px;height:8px;background:var(--ur-brand-blue);border-radius:99px}
+
+.conversion-strip{
+  margin:0 0 18px;
+  padding:52px 0;
+  background:linear-gradient(135deg,#08112f 0%,#1834a8 62%,#3153ee 100%);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.conversion-strip::after{
+  content:"UniRent";
+  position:absolute;right:-3vw;bottom:-26px;
+  font-weight:900;font-style:italic;
+  font-size:min(120px,15vw);
+  letter-spacing:-.07em;
+  color:rgba(255,255,255,.08);
+}
+.conversion-grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:1.25fr auto;
+  gap:28px;
+  align-items:center;
+}
+.conversion-strip h2{font-size:clamp(30px,4.8vw,54px);line-height:.96;letter-spacing:-.05em;margin:0 0 12px;font-weight:950}
+.conversion-strip p{max-width:660px;font-size:18px;line-height:1.45;color:rgba(255,255,255,.76);font-weight:600}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta-primary,.cta-secondary,.blog-more{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 22px;border-radius:999px;
+  font-weight:900;letter-spacing:-.01em;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
+}
+.cta-primary{background:#fff;color:var(--ur-brand-blue)!important;box-shadow:0 18px 38px rgba(0,0,0,.18)}
+.cta-secondary{color:#fff!important;border:1px solid rgba(255,255,255,.36);background:rgba(255,255,255,.08)}
+.cta-primary:hover,.cta-secondary:hover,.blog-more:hover{transform:translateY(-2px)}
+
+/* Blog and contact pages */
+.page-hero-lite{
+  background:linear-gradient(180deg,#1834a8 0%,#08112f 100%);
+  color:#fff;
+  padding:96px 0 74px;
+  position:relative;
+  overflow:hidden;
+}
+.page-hero-lite::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 72% 24%,rgba(100,130,255,.34),transparent 30%),radial-gradient(circle at 0 0,rgba(255,255,255,.10),transparent 28%);
+}
+.page-hero-lite .container{position:relative;z-index:1}
+.page-hero-lite h1{font-size:clamp(44px,7vw,84px);line-height:.92;letter-spacing:-.06em;font-weight:950;margin-bottom:18px;max-width:780px}
+.page-hero-lite p{font-size:clamp(18px,2vw,24px);line-height:1.36;color:rgba(255,255,255,.76);max-width:720px;font-weight:650}
+.page-content{background:#f6f7fb;padding:54px 0 70px}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.article-card,.contact-card,.form-card,.faq-card{
+  background:#fff;border:1px solid var(--ur-border);border-radius:var(--ur-radius);
+  box-shadow:0 18px 52px rgba(8,12,30,.07);
+}
+.article-card{overflow:hidden;display:flex;flex-direction:column;min-height:100%}
+.article-card img{width:100%;height:210px;object-fit:cover;display:block;background:#111827}
+.article-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.article-body small{font-size:12px;color:var(--ur-brand-blue);font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.article-body h2{font-size:24px;line-height:1.04;letter-spacing:-.035em;color:var(--ur-ink)}
+.article-body p{font-size:15px;line-height:1.48;color:var(--ur-muted);font-weight:650}
+.article-body .blog-more{margin-top:auto;align-self:flex-start;background:var(--ur-brand-blue);color:#fff!important;min-height:42px;padding:0 16px;font-size:13px}
+
+.contact-layout{display:grid;grid-template-columns:.95fr 1.35fr;gap:24px;align-items:start}
+.contact-stack{display:grid;gap:16px}
+.contact-card{padding:22px}
+.contact-card strong{display:block;font-size:20px;letter-spacing:-.03em;margin-bottom:8px;color:var(--ur-ink)}
+.contact-card p{font-size:15px;line-height:1.45;color:var(--ur-muted);font-weight:650}
+.contact-card .mini{display:inline-flex;margin-bottom:14px;width:38px;height:38px;border-radius:13px;background:rgba(24,52,168,.08);color:var(--ur-brand-blue);align-items:center;justify-content:center;font-weight:950}
+.form-card{padding:28px}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{display:grid;gap:8px;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:900;color:#555b6d}
+.contact-form input,.contact-form select,.contact-form textarea{
+  width:100%;min-height:50px;border:1px solid var(--ur-border);border-radius:14px;background:#fff;padding:0 15px;font:700 15px 'Inter Tight',Arial,sans-serif;color:var(--ur-ink);outline:none;
+}
+.contact-form textarea{grid-column:1/-1;min-height:128px;padding:14px 15px;resize:vertical}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:rgba(24,52,168,.55);box-shadow:0 0 0 4px rgba(24,52,168,.09)}
+.contact-form .full{grid-column:1/-1}
+.contact-form button{justify-self:start;border:0;cursor:pointer;background:linear-gradient(180deg,var(--ur-brand-blue-2),var(--ur-brand-blue));color:#fff;min-height:52px;padding:0 24px;border-radius:999px;font-weight:950;font-size:15px;box-shadow:0 16px 32px rgba(24,52,168,.22)}
+.form-note{font-size:13px;color:var(--ur-muted);font-weight:650;line-height:1.45;margin-top:16px}
+
+.faq-section{padding:16px 0 0}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.faq-card{padding:22px}
+.faq-card h3{font-size:19px;line-height:1.05;margin-bottom:10px;color:var(--ur-ink)}
+.faq-card p{font-size:14px;line-height:1.45;color:var(--ur-muted);font-weight:650}
+
+.footer .footer-grid{align-items:start!important}
+.footer h3{letter-spacing:-.06em!important}
+.footer-contact-mini{display:grid;gap:8px;margin-top:18px;color:rgba(255,255,255,.68);font-size:13px;font-weight:700}
+.footer-contact-mini span{display:flex;gap:8px;align-items:center}
+.footer-contact-mini b{color:#fff;font-size:11px;letter-spacing:.08em;text-transform:uppercase;min-width:78px}
+
+.floating-reserve{
+  position:fixed;right:18px;bottom:18px;z-index:80;
+  display:none;align-items:center;gap:8px;
+  min-height:48px;padding:0 18px;border-radius:999px;
+  background:linear-gradient(180deg,var(--ur-brand-blue-2),var(--ur-brand-blue));
+  color:#fff!important;font-weight:950;box-shadow:0 18px 44px rgba(24,52,168,.32);
+}
+.floating-reserve.is-visible{display:inline-flex}
+
+@media(max-width:980px){
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .conversion-grid,.contact-layout{grid-template-columns:1fr}
+  .article-grid,.faq-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .trust-band{padding:16px 0}.trust-grid{grid-template-columns:1fr}.trust-item{padding:16px}
+  .conversion-strip{padding:42px 0}.cta-primary,.cta-secondary{width:100%}
+  .article-grid,.faq-grid{grid-template-columns:1fr}.article-card img{height:190px}
+  .page-hero-lite{padding:82px 0 58px}.page-content{padding:38px 0 56px}
+  .contact-form{grid-template-columns:1fr}.contact-form textarea,.contact-form .full{grid-column:auto}.form-card{padding:22px}
+  .floating-reserve{left:14px;right:14px;justify-content:center}
+}
+
+.reservation-helper{margin-top:16px;max-width:520px;display:grid;gap:5px;color:rgba(255,255,255,.72);font-weight:650;font-size:14px;line-height:1.35}.reservation-helper strong{color:#fff;font-size:15px}
+
+
+/* === v6 component helpers === */
+[data-unirent-nav], [data-unirent-footer]{display:contents}
+.footer-contact-mini{display:grid;gap:8px;margin-top:18px;color:rgba(255,255,255,.68);font-size:13px;line-height:1.35}
+.footer-contact-mini b{color:#fff}
+.navlinks a[aria-current="page"]{color:#fff;font-weight:900}
+@media(max-width:900px){
+  .navlinks.is-open{max-height:80vh;overflow:auto}
+}

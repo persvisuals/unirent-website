@@ -1,0 +1,5 @@
+/* Page-specific behavior extracted from inline scripts during v6 cleanup. */
+let automaticOnly=true;const autoSwitch=document.getElementById('autoSwitch'),classFilter=document.getElementById('classFilter'),fuelFilter=document.getElementById('fuelFilter'),cards=[...document.querySelectorAll('.card')],empty=document.getElementById('emptyState');
+function applyFilters(){const cls=classFilter.value,fuel=fuelFilter.value;let visible=0;cards.forEach(card=>{const show=(cls==='all'||card.dataset.class===cls)&&(fuel==='all'||card.dataset.fuel===fuel)&&(!automaticOnly||card.dataset.auto==='true');card.classList.toggle('hidden',!show);if(show)visible++;});empty.style.display=visible?'none':'block';}
+if(autoSwitch) autoSwitch.addEventListener('click',()=>{automaticOnly=!automaticOnly;autoSwitch.classList.toggle('off',!automaticOnly);autoSwitch.setAttribute('aria-pressed',String(automaticOnly));applyFilters();});
+classFilter?.addEventListener('change',applyFilters);fuelFilter?.addEventListener('change',applyFilters);applyFilters();

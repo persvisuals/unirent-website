@@ -1,0 +1,1 @@
+v25: Added post-selection reservation continuation page, updated selected vehicle CTAs from homepage/fleet/cenovnik/reservation selection, and included static checkout/contact/extras summary flow.

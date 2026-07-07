@@ -1,0 +1,1 @@
+v23: Branded the vehicle price block, removed vehicle card watermark/line overlays, removed reservation input heavy outlines, removed Blog/Kontakt hero car panel box and scaled car image consistently.

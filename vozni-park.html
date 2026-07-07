@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Pregled UniRent voznog parka, klasa vozila, goriva, menjača i cena po danu." name="description"/>
+<title>Vozni park | UniRent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="css/unirent.css" rel="stylesheet"/><link href="css/pages/vozni-park.css" rel="stylesheet"/><link href="css/unirent-visual-v7.css" rel="stylesheet"/><link href="css/unirent-visual-v8.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v14.css" rel="stylesheet"/><link href="css/unirent-visual-v16.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v17.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v18.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v20.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v22.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v23.css" rel="stylesheet"/>
+<link href="css/unirent-visual-v24.css" rel="stylesheet"/>
+<link href="css/taste-final.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="hero">
+<div class="container">
+<div data-active="vozni" data-unirent-nav=""></div>
+<div class="hero-content">
+<div class="hero-copy reveal">
+<h1>Vozni park</h1>
+<p>UniRent - Klase Vozila</p>
+</div>
+<div class="hero-cars reveal">
+<div class="image-slot hero-car-slot">
+<img alt="UniRent fleet hero cars" data-fallback="" src="assets/cars/hero/vozni-park-hero-cars.png"/>
+<div class="placeholder hero-ph"><span>Vizual u pripremi</span></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="fleet-section">
+<div class="container">
+<div class="title reveal">
+<h2>Vozila izdvojena iz ponude</h2>
+<p>UniRent je kompanija koja nema skrivenih troškova prilikom iznajmljivanja vozila!</p>
+</div>
+<div class="toolbar reveal">
+<div class="filters">
+<label class="select-wrap"><select class="filter" id="classFilter"><option value="all">Klasa: Sve</option><option value="B">Grupa B</option><option value="D">Grupa D</option><option value="SUV">Grupa SUV</option></select></label>
+<label class="select-wrap"><select class="filter" id="fuelFilter"><option value="all">Gorivo: Sve</option><option value="Benzin">Benzin</option><option value="Dizel">Dizel</option><option value="Hybrid">Hybrid</option></select></label>
+</div>
+<button aria-pressed="true" class="switch" id="autoSwitch" type="button">Automatik <span class="track"></span></button>
+</div>
+<div class="fleet-grid" id="fleetGrid">
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa SUV</span><h3>Hyundai Santa Fe 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="Hyundai Santa Fe 4x4" data-fallback="" src="assets/cars/fleet/hyundai-santa-fe.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>95 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite Hyundai Santa Fe 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Hyundai+Santa+Fe+4x4&amp;group=Grupa+SUV&amp;price=95+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="B" data-fuel="Benzin"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa B</span><h3>VW Taigo Automatic TSI</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Benzin</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="VW Taigo Automatic TSI" data-fallback="" src="assets/cars/fleet/vw-taigo.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>42 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite VW Taigo Automatic TSI" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=VW+Taigo+Automatic+TSI&amp;group=Grupa+B&amp;price=42+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="D" data-fuel="Dizel"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa D</span><h3>Skoda Superb 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="Skoda Superb 4x4" data-fallback="" src="assets/cars/fleet/skoda-superb.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>58 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite Skoda Superb 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Skoda+Superb+4x4&amp;group=Grupa+D&amp;price=58+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa SUV</span><h3>Volvo XC90 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="Volvo XC90 4x4" data-fallback="" src="assets/cars/fleet/volvo-xc90.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>95 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite Volvo XC90 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Volvo+XC90+4x4&amp;group=Grupa+SUV&amp;price=95+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Hybrid"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa SUV</span><h3>Toyota RAV4 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Hybrid</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="Toyota RAV4 4x4" data-fallback="" src="assets/cars/fleet/toyota-rav4.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>72 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite Toyota RAV4 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Toyota+RAV4+4x4&amp;group=Grupa+SUV&amp;price=72+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<article class="card car-card reveal vehicle-card-v8" data-auto="true" data-class="SUV" data-fuel="Dizel"><div class="vehicle-card-head"><div class="vehicle-title-block"><span class="vehicle-class-pill">Grupa SUV</span><h3>Hyundai Tucson 4x4</h3></div><span class="vehicle-stock">Dostupno</span></div>
+<div class="tags"><span class="tag">Dizel</span><span class="tag">Automatik</span><span class="tag">5 vrata</span></div>
+<div class="car-pic"><div class="image-slot fleet-image"><img alt="Hyundai Tucson 4x4" data-fallback="" src="assets/cars/fleet/hyundai-tucson.png"/><div class="placeholder fleet-placeholder"><span>Vizual u pripremi</span></div></div></div>
+<div class="price"><span class="price-prefix">od</span><strong>72 €</strong><span class="price-suffix">/ dan</span></div>
+<div class="date">Početna cena / dan</div>
+<div class="vehicle-actions"><a aria-label="Rezervišite Hyundai Tucson 4x4" class="more vehicle-primary" href="rezervacija-podaci.html?vehicle=Hyundai+Tucson+4x4&amp;group=Grupa+SUV&amp;price=72+%E2%82%AC&amp;source=fleet">Rezerviši →</a><a class="vehicle-secondary" href="cenovnik.html">Cenovnik</a></div></article>
+<div class="empty" id="emptyState">Nema vozila za izabrane filtere.</div>
+</div>
+</div>
+</main>
+<section class="conversion-strip"><div class="container conversion-grid"><div><h2>Brza rezervacija iz ponude</h2><p>Svaka cena i svako vozilo mogu da vode direktno u rezervacioni proces, bez vraćanja korisnika na početak sajta.</p></div><div class="cta-row"><a class="cta-primary" href="rezervacija-vozila.html">Rezervišite vozilo →</a><a class="cta-secondary" href="kontakt.html">Pošaljite upit</a></div></div></section>
+<div data-unirent-footer=""></div>
+<script defer="" src="js/unirent.js"></script><script defer="" src="js/pages/vozni-park.js"></script><script src="js/unirent-v14.js"></script>
+</body>
+</html>

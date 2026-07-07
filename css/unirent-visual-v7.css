@@ -1,0 +1,357 @@
+/* UniRent v7 — Step 1 visual polish
+   Focus: stronger brand system, global UI hierarchy, premium cards/buttons/forms.
+   Loaded after page CSS so it acts as the visual override layer. */
+:root{
+  --v7-blue:#1738c9;
+  --v7-blue-2:#315cff;
+  --v7-blue-3:#6e8cff;
+  --v7-ink:#080d1d;
+  --v7-ink-2:#12182a;
+  --v7-muted:#6d7383;
+  --v7-soft:#f6f8fc;
+  --v7-line:rgba(9,16,36,.10);
+  --v7-line-strong:rgba(9,16,36,.16);
+  --v7-radius-sm:14px;
+  --v7-radius:24px;
+  --v7-radius-lg:34px;
+  --v7-shadow:0 26px 80px rgba(8,13,35,.14);
+  --v7-shadow-soft:0 16px 44px rgba(8,13,35,.08);
+  --v7-glow:0 18px 50px rgba(49,92,255,.28);
+}
+html{background:var(--v7-soft)}
+body{
+  background:
+    radial-gradient(circle at 8% 12%,rgba(49,92,255,.055),transparent 24rem),
+    radial-gradient(circle at 92% 42%,rgba(23,56,201,.045),transparent 28rem),
+    linear-gradient(180deg,#fff 0%,var(--v7-soft) 32%,#f1f4fa 100%) !important;
+  color:var(--v7-ink)!important;
+}
+::selection{background:rgba(49,92,255,.22)}
+.container{width:min(100% - 72px,1200px)!important}
+
+/* Brand/navigation */
+.nav{isolation:isolate}
+.logo{
+  gap:10px!important;
+  letter-spacing:-1.15px!important;
+  text-shadow:0 10px 32px rgba(0,0,0,.16);
+}
+.logo::before{
+  content:'U';
+  width:34px;height:34px;
+  flex:0 0 34px;
+  display:inline-grid;place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,#fff,rgba(255,255,255,.72));
+  color:var(--v7-blue);
+  font-size:19px;
+  font-style:italic;
+  font-weight:950;
+  letter-spacing:-.12em;
+  box-shadow:0 12px 34px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.35);
+}
+.logo::after{
+  opacity:.78;
+  transform:translateY(-1px);
+}
+.navlinks{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  padding:6px!important;
+  backdrop-filter:blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10);
+}
+.navlinks a{
+  padding:10px 14px!important;
+  border-radius:999px!important;
+  letter-spacing:.01em;
+}
+.navlinks a:hover,
+.navlinks a.active,
+.navlinks a[aria-current="page"]{
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.10))!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+.navlinks a[href="rezervacija-vozila.html"]{
+  background:rgba(255,255,255,.14)!important;
+}
+.navlinks a[href="rezervacija-vozila.html"]::after{display:none!important}
+.menu{box-shadow:inset 0 1px 0 rgba(255,255,255,.20),0 12px 28px rgba(0,0,0,.16)!important}
+
+/* Hero atmosphere */
+.hero,.hero-sub,.page-hero-lite{
+  background:
+    radial-gradient(circle at 72% 25%,rgba(113,143,255,.42),transparent 24rem),
+    radial-gradient(circle at 18% 4%,rgba(255,255,255,.14),transparent 22rem),
+    linear-gradient(180deg,#1e43d6 0%,#112979 48%,#050917 100%)!important;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before,.hero-sub::before,.page-hero-lite::before{
+  content:''!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(115deg,transparent 0 56%,rgba(255,255,255,.06) 56.2% 56.7%,transparent 57% 100%),
+    linear-gradient(118deg,transparent 0 64%,rgba(255,255,255,.045) 64.2% 64.6%,transparent 65% 100%),
+    radial-gradient(circle at 42% 58%,rgba(62,96,255,.20),transparent 18rem)!important;
+  opacity:1!important;
+}
+.hero::after,.hero-sub::after{
+  background:
+    linear-gradient(180deg,transparent,rgba(3,7,20,.58) 62%,rgba(3,7,20,.90)),
+    repeating-linear-gradient(90deg,transparent 0 42px,rgba(255,255,255,.025) 42px 43px)!important;
+}
+.hero-stage::before,.hero-content::before,.hero-inner::before{
+  content:'';
+  position:absolute;
+  left:50%;bottom:18px;
+  width:min(780px,72vw);height:90px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.34),transparent 68%);
+  filter:blur(4px);
+  opacity:.72;
+  pointer-events:none;
+}
+.hero-image img,.hero-car-wrap img,.hero-car-slot img,.feature-image img{
+  transform:translateZ(0);
+  filter:drop-shadow(0 46px 34px rgba(0,0,0,.42)) drop-shadow(0 0 34px rgba(78,112,255,.22))!important;
+}
+.hero-badge{
+  border-radius:26px!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.08))!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+.hero-badge .icon{
+  background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(255,255,255,.10))!important;
+  border:1px solid rgba(255,255,255,.13);
+}
+
+/* Buttons and CTAs */
+.btn,.reserve-hero,.more,.card-btn,.cta-primary,.contact-form button,.floating-reserve,.price-reserve-link{
+  border-radius:999px!important;
+  background:linear-gradient(180deg,var(--v7-blue-2),var(--v7-blue))!important;
+  color:#fff!important;
+  box-shadow:var(--v7-glow)!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important;
+}
+.btn:hover,.reserve-hero:hover,.more:hover,.card-btn:hover,.cta-primary:hover,.contact-form button:hover,.floating-reserve:hover,.price-reserve-link:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 24px 60px rgba(49,92,255,.34)!important;
+}
+.cta-secondary{
+  border-radius:999px!important;
+  background:rgba(255,255,255,.10)!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  color:#fff!important;
+}
+
+/* Global cards/surfaces */
+.booking,.table-card,.article-card,.contact-card,.form-card,.faq-card,.terms section,.trust-item{
+  border-radius:var(--v7-radius-lg)!important;
+  border:1px solid rgba(10,18,40,.09)!important;
+  box-shadow:var(--v7-shadow-soft)!important;
+  background:linear-gradient(180deg,#fff,#f9fbff)!important;
+}
+.booking{
+  box-shadow:0 30px 90px rgba(2,7,26,.22)!important;
+}
+.booking::before{
+  height:6px!important;
+  background:linear-gradient(90deg,var(--v7-blue),var(--v7-blue-3),#ffffff)!important;
+}
+.field,.filter-select,.filter,.pill-select select,.select,.search,.contact-form input,.contact-form select,.contact-form textarea{
+  border-radius:18px!important;
+  border:1px solid var(--v7-line)!important;
+  background:linear-gradient(180deg,#fff,#fbfcff)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 10px 26px rgba(8,13,35,.04)!important;
+}
+.field:hover,.field:focus-within,.filter-select:hover,.filter:hover,.pill-select select:hover,.select:hover,.search:hover,.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+  border-color:rgba(49,92,255,.38)!important;
+  box-shadow:0 0 0 4px rgba(49,92,255,.08),0 14px 34px rgba(8,13,35,.06)!important;
+}
+
+/* Reservation form must stay dark/readable */
+body .hero .reservation-box{
+  background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.065))!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  border-radius:34px!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.16)!important;
+}
+body .hero .reservation-box .field label{
+  color:rgba(255,255,255,.92)!important;
+  text-shadow:0 1px 8px rgba(0,0,0,.40)!important;
+}
+body .hero .reservation-box .fake-input{
+  background:linear-gradient(180deg,rgba(8,18,58,.88),rgba(5,12,38,.92))!important;
+  border-color:rgba(255,255,255,.30)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 14px 30px rgba(0,0,0,.18)!important;
+}
+body .hero .reservation-box .fake-input:hover,
+body .hero .reservation-box .fake-input:focus-within{
+  border-color:rgba(255,255,255,.62)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.10),0 18px 40px rgba(0,0,0,.24)!important;
+}
+
+/* Vehicle cards */
+.car-card,.card{
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:32px!important;
+  background:
+    radial-gradient(circle at 74% 18%,rgba(122,151,255,.36),transparent 24%),
+    linear-gradient(150deg,#1d44d2 0%,#0d1d62 42%,#050915 100%)!important;
+  box-shadow:0 26px 70px rgba(7,12,35,.20)!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+}
+.car-card::before,.card::before{
+  content:'UniRent';
+  position:absolute;right:20px;top:20px;
+  z-index:1;
+  padding:7px 11px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.70);
+  font-size:10px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;
+}
+.car-card::after,.card::after{
+  content:'';
+  position:absolute;left:-40%;right:-40%;bottom:-42%;height:58%;
+  background:radial-gradient(ellipse at center,rgba(255,255,255,.14),transparent 58%);
+  pointer-events:none;
+}
+.car-card > *,.card > *{position:relative;z-index:2}
+.car-card:hover,.card:hover{
+  transform:translateY(-8px)!important;
+  box-shadow:0 34px 90px rgba(24,52,168,.25)!important;
+}
+.car-card h3,.card h3,.car-title{
+  max-width:72%;
+  letter-spacing:-.045em!important;
+}
+.tag{
+  border-radius:999px!important;
+  background:rgba(255,255,255,.13)!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  backdrop-filter:blur(10px);
+}
+.tag::before{
+  content:'';
+  display:inline-block;
+  width:6px;height:6px;
+  margin-right:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.78);
+  vertical-align:middle;
+}
+.price{
+  display:flex!important;
+  align-items:baseline!important;
+  gap:6px!important;
+  color:#fff!important;
+  letter-spacing:-.06em!important;
+}
+.price::after{
+  content:'/ dan';
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:0;
+  color:rgba(255,255,255,.58);
+}
+.price strong::after{content:'/ dan';font-size:13px;font-weight:800;margin-left:6px;color:rgba(255,255,255,.58)}
+.car-pic img,.car-img-zone img,.fleet-image img{
+  filter:drop-shadow(0 28px 24px rgba(0,0,0,.44))!important;
+}
+
+/* Pricing table polish */
+.table-card{
+  padding:14px!important;
+  overflow:hidden!important;
+}
+.table-card table{
+  border-collapse:separate!important;
+  border-spacing:0 8px!important;
+}
+.table-card thead th{
+  background:linear-gradient(180deg,var(--v7-blue-2),var(--v7-blue))!important;
+  border:0!important;
+}
+.table-card tbody tr{
+  background:#fff!important;
+  box-shadow:0 1px 0 rgba(8,13,35,.05)!important;
+}
+.table-card tbody tr:hover{
+  background:#f2f5ff!important;
+  transform:translateY(-1px);
+  box-shadow:0 12px 34px rgba(49,92,255,.08)!important;
+}
+.table-card tbody td:first-child{
+  color:var(--v7-blue)!important;
+}
+.price-reserve-link{
+  min-height:38px!important;
+  padding:0 15px!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  white-space:nowrap;
+}
+
+/* Trust / conversion visual refinement */
+.trust-band{
+  background:linear-gradient(180deg,#fff,#f4f7fc)!important;
+}
+.trust-item{
+  transition:transform .18s ease,box-shadow .18s ease!important;
+}
+.trust-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 22px 54px rgba(8,13,35,.10)!important;
+}
+.trust-icon{
+  background:linear-gradient(180deg,var(--v7-blue-2),var(--v7-blue))!important;
+}
+.section-kicker{
+  background:rgba(49,92,255,.09)!important;
+  color:var(--v7-blue)!important;
+}
+.section-kicker::before{background:var(--v7-blue-2)!important}
+.conversion-strip{
+  background:
+    radial-gradient(circle at 85% 35%,rgba(132,158,255,.32),transparent 24rem),
+    linear-gradient(135deg,#050915 0%,#132b91 56%,#315cff 100%)!important;
+}
+.blog-card,.article-card{
+  border-radius:30px!important;
+  overflow:hidden!important;
+}
+.blog-image img,.article-card img{
+  transition:transform .35s ease!important;
+}
+.blog-card:hover .blog-image img,.article-card:hover img{
+  transform:scale(1.045);
+}
+
+@media(max-width:1000px){
+  .navlinks{border-radius:24px!important;background:rgba(5,9,23,.96)!important;padding:12px!important}
+  .navlinks a{border-radius:16px!important}
+  .hero-stage::before,.hero-content::before,.hero-inner::before{width:86vw}
+}
+@media(max-width:720px){
+  .container{width:min(100% - 32px,1200px)!important}
+  .logo::after{display:none!important}
+  .logo::before{width:31px;height:31px;flex-basis:31px;font-size:17px}
+  .booking,.table-card,.article-card,.contact-card,.form-card,.faq-card,.terms section,.trust-item{border-radius:24px!important}
+  .car-card h3,.card h3,.car-title{max-width:100%}
+  .car-card::before,.card::before{display:none}
+  .table-card{padding:10px!important}
+  .price-reserve-link{width:100%;justify-content:center}
+}
+
+/* Conversion strips need a white primary button on blue background. */
+.conversion-strip .cta-primary{background:#fff!important;color:var(--v7-blue)!important;border-color:rgba(255,255,255,.45)!important;box-shadow:0 22px 50px rgba(0,0,0,.20)!important}
+.conversion-strip .cta-primary:hover{box-shadow:0 28px 66px rgba(0,0,0,.24)!important}

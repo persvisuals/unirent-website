@@ -1,0 +1,1 @@
+v22 fixes: removed emoji pseudo-icons from vehicle tags; fixed automatic slider styling on fleet/reservation pages; forced reservation form values to dark readable text; simplified footer JS markup; replaced Blog/Kontakt hero text panel with car image; reset footer CSS for Blog/Kontakt; added consistent car sizing/baseline in cards; tightened nav active highlighting.

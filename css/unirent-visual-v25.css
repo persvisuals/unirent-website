@@ -1,0 +1,72 @@
+
+/* UniRent v25 — selected vehicle checkout/continuation flow */
+body.reservation-next-v25{background:#f4f6fb!important;color:#070b1c!important;overflow-x:hidden;}
+.checkout-hero-v25{min-height:620px;padding:22px 0 88px;background:radial-gradient(circle at 76% 24%,rgba(108,145,255,.38),transparent 28%),linear-gradient(180deg,#2346d2 0%,#0a1957 58%,#040817 100%);color:#fff;position:relative;overflow:hidden;}
+.checkout-hero-v25::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 54%,rgba(255,255,255,.06) 54% 55%,transparent 55% 100%);pointer-events:none;}
+.checkout-hero-grid-v25{position:relative;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.72fr);gap:48px;align-items:center;padding-top:58px;}
+.checkout-copy-v25 h1{font-size:clamp(56px,6.5vw,104px);line-height:.88;letter-spacing:-.065em;margin:20px 0 24px;max-width:880px;}
+.checkout-copy-v25 p{font-size:clamp(20px,2vw,28px);line-height:1.22;color:rgba(255,255,255,.74);max-width:760px;margin:0 0 34px;}
+.checkout-kicker-v25{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-size:15px;font-weight:950;text-transform:uppercase;letter-spacing:.12em;color:#fff;}
+.checkout-kicker-v25::before{content:'';width:10px;height:10px;border-radius:50%;background:#6ee7ff;box-shadow:0 0 20px rgba(110,231,255,.75);}
+.checkout-steps-v25{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:840px;}
+.checkout-steps-v25 span{min-height:72px;border-radius:22px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;gap:10px;color:rgba(255,255,255,.62);font-weight:950;}
+.checkout-steps-v25 span.done{background:rgba(255,255,255,.14);color:#fff;}
+.checkout-steps-v25 span.done::before{content:'✓';width:28px;height:28px;border-radius:999px;display:grid;place-items:center;background:#fff;color:#1834a8;font-size:13px;}
+.checkout-steps-v25 span.active{background:#fff;color:#10205e;box-shadow:0 24px 60px rgba(0,0,0,.20);}
+.selected-car-hero-v25{border-radius:40px;background:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18);padding:26px;box-shadow:0 38px 90px rgba(0,0,0,.22);backdrop-filter:blur(14px);min-height:430px;display:grid;align-content:center;overflow:hidden;}
+.selected-car-top-v25{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:16px;}
+.selected-car-top-v25 span,.selected-car-top-v25 strong{display:inline-flex;align-items:center;min-height:38px;border-radius:999px;padding:0 16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:#fff;}
+.selected-car-top-v25 strong{background:#fff;color:#1834a8;letter-spacing:-.02em;text-transform:none;}
+.selected-car-hero-v25 img{width:115%;max-width:none;margin:8px 0 4px -8%;filter:drop-shadow(0 36px 26px rgba(0,0,0,.32));}
+.selected-car-hero-v25 h2{font-size:34px;line-height:1;letter-spacing:-.04em;margin:10px 0 8px;}
+.selected-car-hero-v25 p{font-size:18px;margin:0;color:rgba(255,255,255,.72);font-weight:700;}
+.checkout-main-v25{padding:72px 0 88px;background:linear-gradient(180deg,#f7f8fc 0%,#edf1f8 100%);}
+.checkout-layout-v25{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:28px;align-items:start;}
+.checkout-form-card-v25,.checkout-summary-v25 .summary-card-v25{border-radius:34px;background:rgba(255,255,255,.96);border:1px solid rgba(11,18,43,.10);box-shadow:0 24px 70px rgba(8,13,35,.10);}
+.checkout-form-card-v25{overflow:hidden;}
+.checkout-section-head-v25{padding:36px 38px 30px;display:flex;gap:20px;align-items:flex-start;background:radial-gradient(circle at 92% 0%,rgba(31,72,210,.11),transparent 32%),#fff;border-bottom:1px solid rgba(11,18,43,.08);}
+.checkout-section-head-v25>span{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;background:#eef2ff;color:#1834a8;font-weight:950;text-transform:uppercase;letter-spacing:.08em;}
+.checkout-section-head-v25 h2{font-size:clamp(34px,3.4vw,54px);line-height:.94;letter-spacing:-.055em;margin:0 0 10px;}
+.checkout-section-head-v25 p{margin:0;color:#73798a;font-size:18px;line-height:1.35;font-weight:750;max-width:780px;}
+.reservation-next-form-v25{padding:34px 38px 40px;display:grid;gap:28px;}
+.reservation-next-form-v25 fieldset{margin:0;padding:0;border:0;display:grid;gap:18px;}
+.reservation-next-form-v25 legend,.note-field-v25>span{font-size:15px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;color:#34405a;margin-bottom:4px;}
+.form-grid-v25{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;}
+.form-grid-v25 label,.note-field-v25{display:grid;gap:8px;min-width:0;}
+.form-grid-v25 label span,.note-field-v25 span{font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:#667085;}
+.form-grid-v25 input,.form-grid-v25 select,.note-field-v25 textarea{width:100%;min-width:0;height:60px;border:1px solid rgba(11,18,43,.12);border-radius:18px;background:#f7f9fe;color:#070b1c;font-size:18px;font-weight:850;padding:0 18px;box-sizing:border-box;box-shadow:none;}
+.note-field-v25 textarea{height:auto;min-height:132px;padding:18px;resize:vertical;line-height:1.35;}
+.form-grid-v25 input:focus,.form-grid-v25 select:focus,.note-field-v25 textarea:focus{outline:3px solid rgba(24,52,168,.16);border-color:rgba(24,52,168,.42);background:#fff;}
+.extras-grid-v25{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.extra-card-v25{display:flex!important;align-items:flex-start;gap:14px;padding:18px;border:1px solid rgba(11,18,43,.10);background:#f7f9fe;border-radius:20px;cursor:pointer;transition:.18s ease;}
+.extra-card-v25:hover{border-color:rgba(24,52,168,.30);background:#fff;transform:translateY(-1px);}
+.extra-card-v25.wide{grid-column:1/-1;}
+.extra-card-v25 input{width:22px;height:22px;accent-color:#1834a8;margin-top:2px;}
+.extra-card-v25 b{display:block;font-size:18px;line-height:1.05;color:#070b1c;margin-bottom:6px;}
+.extra-card-v25 em{display:block;font-style:normal;color:#70788a;font-size:14px;font-weight:750;line-height:1.25;}
+.checkout-submit-v25{width:max-content;min-height:64px;border:0;border-radius:22px;background:linear-gradient(180deg,#3159ff,#1834a8);color:#fff;font-size:19px;font-weight:950;padding:0 30px;cursor:pointer;box-shadow:0 18px 40px rgba(24,52,168,.25);}
+.checkout-submit-v25:hover{transform:translateY(-2px);box-shadow:0 24px 50px rgba(24,52,168,.30);}
+.checkout-status-v25{margin:0;color:#1834a8;font-size:17px;font-weight:850;line-height:1.35;}
+.checkout-summary-v25{position:sticky;top:18px;display:grid;gap:18px;}
+.checkout-summary-v25 .summary-card-v25{padding:24px;}
+.summary-label-v25{font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:#738099;display:block;margin-bottom:12px;}
+.summary-card-v25.selected-v25{background:linear-gradient(180deg,#203fbe,#07164b);color:#fff;overflow:hidden;}
+.summary-card-v25.selected-v25 .summary-label-v25{color:rgba(255,255,255,.62);}
+.summary-card-v25.selected-v25 h3{font-size:30px;line-height:.98;letter-spacing:-.045em;margin:0 0 8px;}
+.summary-card-v25.selected-v25 p{margin:0;color:rgba(255,255,255,.72);font-weight:800;}
+.summary-card-v25.selected-v25 img{width:118%;max-width:none;margin:12px 0 -10px -8%;filter:drop-shadow(0 22px 18px rgba(0,0,0,.30));}
+.summary-list-v25{display:grid;gap:12px;margin:0;}
+.summary-list-v25 div{display:grid;gap:4px;padding:13px 14px;border-radius:16px;background:#f5f7fd;}
+.summary-list-v25 dt{font-size:11px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:#818aa0;}
+.summary-list-v25 dd{margin:0;font-size:16px;font-weight:900;color:#091126;line-height:1.15;}
+.total-row-v25,.grand-total-v25{display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:850;color:#6b7280;}
+.total-row-v25 strong{color:#091126;font-size:18px;}
+.total-line-v25{height:1px;background:rgba(11,18,43,.10);margin:16px 0;}
+.grand-total-v25 strong{font-size:34px;letter-spacing:-.05em;color:#1834a8;}
+.total-v25 p{margin:14px 0 0;color:#70788a;font-size:14px;line-height:1.35;font-weight:700;}
+.checklist-v25 ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;}
+.checklist-v25 li{display:flex;gap:10px;align-items:center;color:#20283c;font-weight:800;}
+.checklist-v25 li::before{content:'✓';display:grid;place-items:center;width:22px;height:22px;border-radius:999px;background:#eef2ff;color:#1834a8;font-size:12px;font-weight:950;}
+.checkout-bottom-v25{margin-top:0!important;}
+@media(max-width:1080px){.checkout-hero-grid-v25,.checkout-layout-v25{grid-template-columns:1fr;}.checkout-summary-v25{position:relative;top:auto;grid-template-columns:repeat(2,minmax(0,1fr));}.summary-card-v25.selected-v25{grid-column:1/-1;}.selected-car-hero-v25{max-width:700px;}.checkout-steps-v25{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:720px){.checkout-hero-v25{padding-bottom:56px;}.checkout-copy-v25 h1{font-size:48px;}.checkout-copy-v25 p{font-size:19px;}.checkout-steps-v25,.form-grid-v25,.extras-grid-v25,.checkout-summary-v25{grid-template-columns:1fr;}.extra-card-v25.wide{grid-column:auto;}.checkout-section-head-v25{padding:28px 22px;display:grid;}.reservation-next-form-v25{padding:28px 22px;}.checkout-submit-v25{width:100%;}.selected-car-hero-v25{border-radius:28px;}.checkout-summary-v25 .summary-card-v25{border-radius:26px;}}

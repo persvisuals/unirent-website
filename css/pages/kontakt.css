@@ -1,0 +1,2 @@
+/* Page-specific styles extracted from inline CSS during v6 cleanup. */
+.page-nav{position:absolute;inset:0 0 auto 0;z-index:5;color:#fff}.page-nav .nav{height:76px;display:flex;align-items:center;justify-content:space-between}@media(max-width:900px){.page-nav .navlinks{display:none}.page-nav .menu{display:block}}

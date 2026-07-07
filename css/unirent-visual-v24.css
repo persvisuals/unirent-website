@@ -1,0 +1,189 @@
+
+/* UniRent v24 — targeted QA fixes: contact form bounds, reservation fields, helper shadow, price block */
+
+/* 1) Kontakt form: stop inputs from overflowing the card/container */
+.contact-v12 .form-card.v12-form-card,
+.contact-v12 .contact-form.v12-form,
+.contact-v12 .contact-form.v12-form *{
+  box-sizing:border-box!important;
+}
+.contact-v12 .form-card.v12-form-card{
+  width:100%!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+.contact-v12 .contact-form.v12-form{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:20px!important;
+  row-gap:20px!important;
+  width:100%!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+.contact-v12 .contact-form.v12-form label{
+  display:grid!important;
+  min-width:0!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+.contact-v12 .contact-form.v12-form input,
+.contact-v12 .contact-form.v12-form select,
+.contact-v12 .contact-form.v12-form textarea{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  display:block!important;
+}
+.contact-v12 .contact-form.v12-form .full,
+.contact-v12 .contact-form.v12-form label.full{
+  grid-column:1/-1!important;
+}
+.contact-v12 .contact-form.v12-form button,
+.contact-v12 .v12-note{
+  grid-column:1/-1!important;
+}
+@media(max-width:820px){
+  .contact-v12 .contact-form.v12-form{grid-template-columns:1fr!important;}
+  .contact-v12 .contact-form.v12-form .full,
+  .contact-v12 .contact-form.v12-form label.full,
+  .contact-v12 .contact-form.v12-form button,
+  .contact-v12 .v12-note{grid-column:1!important;}
+}
+
+/* 2) Reservation form: remove the extra outer stroke/box around labels. Keep only the actual input surface. */
+body.reservation-v10 #reservationDetails .reservation-box .field,
+body.reservation-v10 .reservation-box .field,
+body.reservation-v10 #reservationDetails .field{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+body.reservation-v10 #reservationDetails .reservation-box .field:hover,
+body.reservation-v10 .reservation-box .field:hover,
+body.reservation-v10 #reservationDetails .field:hover{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body.reservation-v10 #reservationDetails .reservation-box .field label,
+body.reservation-v10 .reservation-box .field label,
+body.reservation-v10 #reservationDetails .field label{
+  background:transparent!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  border:0!important;
+}
+body.reservation-v10 #reservationDetails .fake-input,
+body.reservation-v10 .reservation-box .fake-input{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:#f6f8fd!important;
+}
+body.reservation-v10 #reservationDetails .fake-input:hover,
+body.reservation-v10 #reservationDetails .fake-input:focus-within,
+body.reservation-v10 .reservation-box .fake-input:hover,
+body.reservation-v10 .reservation-box .fake-input:focus-within{
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+
+/* 3) Reservation helper: remove the visible grey/shadow wash under the explanatory text. */
+body.reservation-v10 .reservation-action-row-v10,
+body.reservation-v10 .reservation-helper,
+body.reservation-v10 .reservation-helper strong,
+body.reservation-v10 .reservation-helper span{
+  background:transparent!important;
+  box-shadow:none!important;
+  filter:none!important;
+  text-shadow:none!important;
+}
+body.reservation-v10 .reservation-action-row-v10::before,
+body.reservation-v10 .reservation-action-row-v10::after,
+body.reservation-v10 .reservation-helper::before,
+body.reservation-v10 .reservation-helper::after{
+  content:none!important;
+  display:none!important;
+}
+body.reservation-v10 .reservation-action-row-v10 .reserve-hero{
+  box-shadow:0 10px 22px rgba(24,52,168,.18)!important;
+}
+body.reservation-v10 .reservation-action-row-v10 .reserve-hero:hover{
+  box-shadow:0 14px 28px rgba(24,52,168,.22)!important;
+}
+
+/* 4) Vehicle price: clean branded block with white text and no breaking. */
+.vehicle-card-v8 .price{
+  display:grid!important;
+  grid-template-columns:auto auto auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  min-height:78px!important;
+  margin:0 24px 14px!important;
+  padding:18px 18px!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(123,220,255,.18),transparent 50%),
+    linear-gradient(180deg,rgba(31,72,210,.96),rgba(8,18,69,.96))!important;
+  border:1px solid rgba(123,220,255,.24)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 16px 34px rgba(2,8,30,.18)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+  line-height:1!important;
+}
+.vehicle-card-v8 .price::before,
+.vehicle-card-v8 .price::after{content:none!important;display:none!important;}
+.vehicle-card-v8 .price .price-prefix,
+.vehicle-card-v8 .price > span.price-prefix,
+.vehicle-card-v8 .price .price-suffix,
+.vehicle-card-v8 .price > span.price-suffix{
+  color:rgba(224,240,255,.86)!important;
+  -webkit-text-fill-color:rgba(224,240,255,.86)!important;
+  font-size:14px!important;
+  font-weight:950!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  display:inline!important;
+  margin:0!important;
+}
+.vehicle-card-v8 .price .price-suffix,
+.vehicle-card-v8 .price > span.price-suffix{
+  font-size:16px!important;
+  letter-spacing:-.02em!important;
+  text-transform:none!important;
+}
+.vehicle-card-v8 .price strong,
+.vehicle-card-v8 .price .price-value{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  font-size:42px!important;
+  line-height:.9!important;
+  font-weight:950!important;
+  letter-spacing:-.055em!important;
+  white-space:nowrap!important;
+  display:inline!important;
+}
+.vehicle-card-v8 .price + small,
+.vehicle-card-v8 .price > span:not(.price-prefix):not(.price-suffix),
+.vehicle-card-v8 .price small{
+  display:none!important;
+}
+@media(max-width:760px){
+  .vehicle-card-v8 .price{margin-inline:12px!important;padding-inline:12px!important;gap:8px!important;}
+  .vehicle-card-v8 .price strong,.vehicle-card-v8 .price .price-value{font-size:36px!important;}
+  .vehicle-card-v8 .price .price-prefix,.vehicle-card-v8 .price .price-suffix{font-size:12px!important;}
+}
+
+.vehicle-card-v8 .price + .date{display:none!important;}
