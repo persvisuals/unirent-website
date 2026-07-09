@@ -1650,3 +1650,48 @@ button,a,input,select,textarea{touch-action:manipulation;}
   }
   :is(body.page-cenovnik,body:has(.pricing-table-card)) .floating-reserve{display:none!important;}
 }
+
+/* v8 QA fixes — menu navigation, cenovnik CTA color, remove process block, larger mobile car images */
+.taste-process{display:none!important;}
+
+body.page-cenovnik .price-reserve-link,
+body.page-cenovnik .price-reserve-link:visited,
+body.page-cenovnik .price-reserve-link:hover,
+body.page-cenovnik .price-reserve-link:focus{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  background:linear-gradient(180deg,#2f58ff 0%,#1d3fd4 100%)!important;
+  border-color:rgba(255,255,255,.16)!important;
+}
+
+@media(max-width:760px){
+  body .navlinks a{touch-action:manipulation!important;}
+
+  /* Bigger vehicle visuals on phone — cards keep the same style, cars fill the empty middle area better. */
+  body .vehicle-card-v8 .car-pic,
+  body .vehicle-card-v8 .car-img-zone,
+  body .vehicle-card-v8 .fleet-image{
+    height:220px!important;
+    min-height:220px!important;
+    flex:0 0 220px!important;
+    margin:14px -18px 10px!important;
+    overflow:visible!important;
+  }
+  body .vehicle-card-v8 .fleet-image img,
+  body .vehicle-card-v8 .car-img-zone img,
+  body .vehicle-card-v8 .car-pic img{
+    width:128%!important;
+    max-width:none!important;
+    height:220px!important;
+    max-height:220px!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    transform:scale(1.08)!important;
+    filter:drop-shadow(0 30px 34px rgba(0,0,0,.35))!important;
+  }
+  body .vehicle-card-v8:hover .fleet-image img,
+  body .vehicle-card-v8:hover .car-img-zone img,
+  body .vehicle-card-v8:hover .car-pic img{
+    transform:scale(1.10)!important;
+  }
+}

@@ -56,8 +56,15 @@
         setOpen(!links.classList.contains('is-open'));
       });
       links.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){setOpen(false);});
-        a.addEventListener('touchstart', function(){setOpen(false);}, {passive:true});
+        a.addEventListener('click', function(e){
+          var href = a.getAttribute('href');
+          var shouldNavigate = href && href !== '#' && href.indexOf('javascript:') !== 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && e.button === 0;
+          setOpen(false);
+          if(shouldNavigate){
+            e.preventDefault();
+            window.location.href = href;
+          }
+        });
       });
       document.addEventListener('click', function(e){if(!nav.contains(e.target)) setOpen(false);});
       document.addEventListener('keydown', function(e){if(e.key === 'Escape') setOpen(false);});
