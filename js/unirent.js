@@ -43,11 +43,27 @@
       btn.setAttribute('aria-controls', links.id);
       btn.setAttribute('aria-expanded','false');
       if(!btn.textContent.trim() || btn.textContent.trim()==='☰' || btn.textContent.trim()==='Menu') btn.textContent='Meni';
-      const setOpen = function(open){links.classList.toggle('is-open', open);btn.setAttribute('aria-expanded', String(open));};
-      btn.addEventListener('click', function(e){e.stopPropagation();setOpen(!links.classList.contains('is-open'));});
-      links.querySelectorAll('a').forEach(function(a){a.addEventListener('click', function(){setOpen(false);});});
+      const setOpen = function(open){
+        links.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? 'Zatvori' : 'Meni';
+        document.body.classList.toggle('nav-menu-open', open);
+      };
+      setOpen(false);
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        setOpen(!links.classList.contains('is-open'));
+      });
+      links.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){setOpen(false);});
+        a.addEventListener('touchstart', function(){setOpen(false);}, {passive:true});
+      });
       document.addEventListener('click', function(e){if(!nav.contains(e.target)) setOpen(false);});
       document.addEventListener('keydown', function(e){if(e.key === 'Escape') setOpen(false);});
+      window.addEventListener('pageshow', function(){setOpen(false);});
+      window.addEventListener('pagehide', function(){setOpen(false);});
+      window.addEventListener('resize', function(){setOpen(false);}, {passive:true});
     });
   }
 
@@ -138,7 +154,7 @@
   }
 
   function setupFloatingCTA(){
-    if(location.pathname.endsWith('rezervacija-vozila.html') || location.pathname.endsWith('rezervacija-podaci.html')) return;
+    if(location.pathname.endsWith('rezervacija-vozila.html') || location.pathname.endsWith('rezervacija-podaci.html') || location.pathname.endsWith('cenovnik.html')) return;
     const a = document.createElement('a');
     a.className = 'floating-reserve';
     a.href = 'rezervacija-vozila.html';
